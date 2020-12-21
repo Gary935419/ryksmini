@@ -1,0 +1,167 @@
+<!--pages/my/wallet/applyInvoice/selectItem/writeInvoice/writeInvoice.wxml-->
+<view class='wrapper'>
+    <view class='title'>发票类型</view>
+
+    <view>
+        <radio-group class="sel-wrapper" bindchange='tabChange'>
+            <label class='sel {{ tabChooseValue == "dianzi" ? "active" : "" }}'>
+                <radio value="dianzi"></radio>
+                <view>电子发票</view>
+            </label>
+            <label class='sel {{ tabChooseValue == "zhizhi" ? "active" : "" }}'>
+                <radio value="zhizhi"></radio>
+                <view>纸质发票</view>
+            </label>
+        </radio-group>
+    </view>
+
+    <view class='title'>发票详情</view>
+
+    <view class='detail-wrapper'>
+        <form>
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>抬头类型</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <radio-group class="self-radio-group">
+                        <label class='self-radio-group-label' style="margin-right: 80rpx;">
+                            <radio></radio>
+                            <view>单位</view>
+                        </label>
+                        <label class='self-radio-group-label'>
+                            <radio></radio>
+                            <view>个人</view>
+                        </label>
+                    </radio-group>
+                </view>
+            </view>
+
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>抬头名称</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <input style="width: 225rpx" placeholder="请输入单位名称"></input>
+                </view>
+            </view>
+
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>纳税人识别号</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <input style="width: 287rpx" placeholder="请填写纳税人识别号"></input>
+                </view>
+            </view>
+
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>发票内容</text>
+                </view>
+                <view class='self-right'>
+                    <text>派送服务费</text>
+                </view>
+            </view>
+
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>开票金额</text>
+                </view>
+            </view>
+
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>更多信息</text>
+                </view>
+                <view class='self-right'>
+                    <text>已选择<text style="color: #11AA38;">0</text>项</text>
+                </view>
+            </view>
+
+            <view class='detail-item detail-item-remark'>
+                <input class='remark-input' placeholder="备注信息将在发票备注栏内展示"></input>
+                <view class='remark-look'>查看发票示例</view>
+            </view>
+        </form>
+    </view>
+
+    <view class='title'>收件人信息</view>
+
+    <view class='detail-wrapper'>
+        <form>
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>联系人</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <input style="width: 255rpx" placeholder="请输入联系人姓名"></input>
+                </view>
+            </view>
+
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>电话</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <input style="width: 225rpx" placeholder="请输入联系电话"></input>
+                </view>
+            </view>
+
+            <view 
+                class='detail-item' 
+                style="border-bottom: none;" 
+                hidden="{{ tabChooseValue == 'zhizhi'}}"
+            >
+                <view class='self-label'>
+                    <text class='self-label-txt'>邮箱</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <input style="width: 320rpx" placeholder="请输入收件人电子邮箱"></input>
+                </view>
+            </view>
+
+            <view class='detail-item' hidden="{{ tabChooseValue == 'dianzi'}}">
+                <view class='self-label'>
+                    <text class='self-label-txt'>地址</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <input style="width: 236rpx" placeholder="请选择省市县/区"></input>
+                </view>
+            </view>
+
+            <view class='detail-item' hidden="{{ tabChooseValue == 'dianzi'}}">
+                <view class='self-label'>
+                    <text class='self-label-txt'>门牌号</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <input style="width: 220rpx" placeholder="请填写详细地址"></input>
+                </view>
+            </view>
+
+            <view 
+                class='detail-item' 
+                style="border-bottom: none;" 
+                hidden="{{ tabChooseValue == 'dianzi'}}"
+            >
+                <view class='self-label'>
+                    <text class='self-label-txt'>邮箱（<text style="font-size: 26rpx">需要行程单填写</text>）</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <input style="width: 320rpx" placeholder="请输入收件人电子邮箱"></input>
+                </view>
+            </view>
+        </form>
+    </view>
+
+    <button class='sure-btn'>确认开票</button>
+</view>

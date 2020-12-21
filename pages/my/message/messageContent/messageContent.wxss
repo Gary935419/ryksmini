@@ -1,0 +1,13 @@
+/* pages/my/message/messageContent/messageContent.wxss */
+.wrapper {
+    padding: 30rpx;
+}
+
+.item {
+    padding: 20rpx 0;
+    border-bottom: 1rpx solid #999;
+}
+
+.item:nth-last-child(1) {
+    border-bottom: none;
+}

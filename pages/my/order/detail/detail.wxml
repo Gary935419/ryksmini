@@ -1,0 +1,72 @@
+<!--pages/my/setting/aboutUs/aboutUs.wxml-->
+<view class='wrapper'>
+	<view class='logo-wrapper'>
+	        <image src='/static/images/icon-about_us.png'></image>
+	    </view>
+    <view class='info-wrapper'>
+        <view class='info-item'>
+            <text>订单号:</text>
+            <text>{{wx_gongzhonghao}}</text>
+        </view>
+        <view class='info-item'>
+            <text>下单时间:</text>
+            <text>{{email}}</text>
+        </view>
+        <view class='info-item'>
+            <text>接单时间:</text>
+            <text>{{email}}</text>
+        </view>
+		<view class='info-item'>
+		    <text>取件时间:</text>
+		    <text>{{email}}</text>
+		</view>
+		<view class='info-item'>
+		    <text>完成时间:</text>
+		    <text>{{email}}</text>
+		</view>
+		<view class='info-item'>
+		    <text>物品名称:</text>
+		    <text>{{email}}</text>
+		</view>
+		<view class='info-item'>
+		    <text>备注信息:</text>
+		    <text>{{email}}</text>
+		</view>
+		<view class='info-item'>
+		    <text>订单费用:</text>
+		    <text>{{email}}</text>
+		</view>
+		<view class='info-item'>
+		    <text>订单公里:</text>
+		    <text>{{email}}</text>
+		</view>
+		<view class='info-item'>
+		    <text>优惠金额:</text>
+		    <text>{{email}}</text>
+		</view>
+		<view class='info-item'>
+		    <text>小费金额:</text>
+		    <text>{{email}}</text>
+		</view>
+		<view class='info-item'>
+		    <text>保价金额:</text>
+		    <text>{{email}}</text>
+		</view>
+		<view class='info-item'>
+		    <text>车牌号码:</text>
+		    <text>{{email}}</text>
+		</view>
+		<view class='info-item'>
+		    <text>车子型号:</text>
+		    <text>{{email}}</text>
+		</view>
+		<view class='info-item'>
+		    <text>车子颜色:</text>
+		    <text>{{email}}</text>
+		</view>
+		<view class='info-item'>
+		    <text>司机电话:</text>
+		    <text>{{email}}</text>
+		</view>
+    </view>
+</view>

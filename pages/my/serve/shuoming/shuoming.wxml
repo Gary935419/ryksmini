@@ -1,0 +1,5 @@
+<!--pages/my/serve/shuoming/shuoming.wxml-->
+<view class='wrapper'>
+    <text class='content' space="nbsp" decode>{{content}}</text>
+</view>
+

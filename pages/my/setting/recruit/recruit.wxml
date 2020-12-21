@@ -1,0 +1,5 @@
+<!--pages/my/setting/recruit/recruit.wxml-->
+<view class='wrapper'>
+    <image src='{{img}}' mode="widthFix" bindtap="look"></image>
+    <view class='txt'>{{txt}}</view>
+</view>

@@ -1,0 +1,22 @@
+<!--pages/my/serve/serve.wxml-->
+<view class='wrapper'>
+    <view class='title'>常见问题</view>
+    <view class='content'>
+        <view class='item' bindtap="toIssue">
+            <text class='item-txt'>常见问题</text>
+            <image class='arrow' src='/static/images/icon-arrow-right-gray.png'></image>
+        </view>
+        <view class='item' bindtap="toShuoming">
+            <text class='item-txt'>如何申请发票</text>
+            <image class='arrow' src='/static/images/icon-arrow-right-gray.png'></image>
+        </view>
+    </view>
+
+    <view class='title'>联系电话</view>
+    <view class='content'>
+        <view class='item'>
+            <text class='item-txt'>联系电话</text>
+            <text bindtap="callPhone">{{content}}</text>
+        </view>
+    </view>
+</view>

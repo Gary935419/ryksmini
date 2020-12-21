@@ -1,0 +1,4 @@
+<!--pages/my/guide/guide.wxml-->
+<view class='wrapper'>
+    <text class='content' space="nbsp" decode>{{content}}</text>
+</view>

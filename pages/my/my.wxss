@@ -1,0 +1,69 @@
+/* pages/my/my.wxss */
+page {
+    background-color: #F5F5F4;
+}
+
+.top {
+    position: relative;
+    width: 100%;
+    height: 330rpx;
+    background: linear-gradient(139deg, rgba(255, 109, 11, 1), rgba(253, 166, 108, 1));
+}
+
+.top > .title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.top .avatar-wrapper {
+    position: absolute;
+    bottom: 22rpx;
+    left: 60rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top .avatar-wrapper > image {
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 32rpx;
+}
+
+.top .avatar-wrapper > text {
+    font-size: 32rpx;
+    color: #000;
+}
+
+.top>image {
+    position: absolute;
+    left: 30rpx;
+    width: 35rpx;
+    height: 35rpx;
+}
+
+.main-wrapper {
+    
+}
+
+.main-wrapper .action-item {
+    display: flex;
+    align-items: center;
+    margin-left: 40rpx;
+    height: 108rpx;
+    border-bottom: 1rpx solid #DCDCDC;
+}
+
+.main-wrapper .action-item > text {
+    font-size: 30rpx;
+    font-weight: 400;
+}
+
+.share-btn {
+    width: 100% !important;
+    margin-right: 0 !important;
+    padding-left: 0;
+    background-color: #F5F5F4;
+}

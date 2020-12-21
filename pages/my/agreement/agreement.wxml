@@ -1,0 +1,7 @@
+<!--pages/my/agreement/agreement.wxml-->
+<view class='wrapper'>
+    <view class='agr-item' bindtap="toNext">
+        <text>如邮快送用户协议</text>
+        <image src='/static/images/icon-arrow-right-gray.png'></image>
+    </view>
+</view>

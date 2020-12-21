@@ -1,0 +1,21 @@
+<!--pages/my/setting/aboutUs/aboutUs.wxml-->
+<view class='wrapper'>
+    <view class='logo-wrapper'>
+        <image src='/static/images/icon-about_us.png'></image>
+    </view>
+
+    <view class='info-wrapper'>
+        <view class='info-item'>
+            <text>微信公众号</text>
+            <text>{{wx_gongzhonghao}}</text>
+        </view>
+        <view class='info-item'>
+            <text>邮箱</text>
+            <text>{{email}}</text>
+        </view>
+        <view class='info-item'>
+            <text>网址</text>
+            <text style="color: #10B114;">http://www.ry-ks.com/</text>
+        </view>
+    </view>
+</view>

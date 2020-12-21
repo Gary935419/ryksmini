@@ -1,0 +1,32 @@
+/* pages/my/setting/aboutUs/aboutUs.wxss */
+.wrapper {
+
+}
+
+.wrapper .logo-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.wrapper .logo-wrapper image {
+    width: 194rpx;
+    height: 194rpx;
+    margin: 92rpx 0 164rpx;
+}
+
+.info-wrapper {
+    padding: 0 60rpx;
+}
+
+.info-wrapper .info-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 34rpx;
+    padding-bottom: 28rpx;
+    border-bottom: 1rpx solid #DCDCDC;
+    font-size: 32rpx;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: rgba(23, 22, 22, 1);
+}

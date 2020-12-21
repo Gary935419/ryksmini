@@ -1,0 +1,24 @@
+<!--pages/my/setting/usualAddress/usualAddress.wxml-->
+<view class='wrapper'>
+    <view class='address-item home'>
+        <image class='icon-home' src='/static/images/icon-address-home.png'></image>
+
+        <view class='middle-wrapper'>
+            <view style="font-size: 32rpx;">家</view>
+            <view style="font-size: 24rpx; color: #757575;">请先设置家庭地址</view>
+        </view>
+
+        <image class='edit' src="/static/images/icon-address-edit.png"></image>
+    </view>
+
+    <view class='address-item company'>
+        <image class='icon-company' src='/static/images/icon-address-home.png'></image>
+
+        <view class='middle-wrapper'>
+            <view style="font-size: 32rpx;">公司</view>
+            <view style="font-size: 24rpx; color: #757575;">请先设置公司地址</view>
+        </view>
+
+        <image class='edit' src="/static/images/icon-address-edit.png"></image>
+    </view>
+</view>

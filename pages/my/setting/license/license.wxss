@@ -1,0 +1,10 @@
+/* pages/my/setting/license/license.wxss */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20% 40rpx 0;
+}
+
+.license-img {
+    width: 100%;
+}

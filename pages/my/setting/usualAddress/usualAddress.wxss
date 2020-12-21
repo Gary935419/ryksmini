@@ -1,0 +1,39 @@
+/* pages/my/setting/usualAddress/usualAddress.wxss */
+.wrapper {
+
+}
+
+.address-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30rpx 26rpx 18rpx;
+    border-bottom: 1rpx solid #DCDCDC;
+}
+
+.icon-home {
+    width: 30rpx;
+    height: 26rpx;
+    margin-right: 20rpx;
+    margin-top: 12rpx;
+    align-self: flex-start;
+}
+
+.icon-company {
+    width: 24rpx;
+    height: 24rpx;
+    margin-right: 20rpx;
+    margin-top: 12rpx;
+    align-self: flex-start;
+}
+
+.edit {
+    width: 26rpx;
+    height: 26rpx;
+}
+
+.middle-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}

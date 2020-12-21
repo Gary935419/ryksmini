@@ -1,0 +1,52 @@
+<!--pages/my/order/order.wxml-->
+<view class='nav-wrapper'>
+    <block wx:for='{{navArr}}' wx:key='index'>
+        <view 
+            class='nav-item {{index == navIndex ? "active" : ""}}' 
+            data-index='{{index}}' 
+            bindtap="changeNav"
+        >{{item.name}}</view>
+    </block>
+</view>
+
+<view class='list-wrapper'>
+    <block wx:for='{{list}}' wx:key='index'>
+        <view class='list-item' style="padding-top: 33rpx;" data-type="{{item.order_type}}" data-id="{{item.order_small_id}}"  bindtap="jumppage">
+            <view class='top'>
+                <view>
+                    <view class='title' style="margin-bottom: 10rpx;">
+                        <image 
+                            style="width: 40rpx; height: 40rpx; margin-right: 20rpx;" 
+                            src='/static/images/icon-location.png'
+                        ></image>
+                        <text>{{item.start_location}}</text>
+                    </view>
+                    <view class='title'>
+                        <image 
+                            style="width: 40rpx; height: 40rpx; margin-right: 20rpx;" 
+                            src='/static/images/icon-location2.png'
+                        ></image>
+                        <text>{{item.end_location}}</text>
+                    </view>
+                </view>
+                <view class='status'>
+                    <text>{{item.status}}</text>
+                    <image src='/static/images/icon-arrow-right-gray.png'></image>
+                </view>
+            </view>
+
+            <view class='down'>
+                <view>
+                    <image src='/static/images/icon-my-order-time.png'></image>
+                    <text>{{item.times}}</text>
+                </view>
+
+                <view>
+                    <text>{{item.price}}元</text>
+                </view>
+            </view>
+        </view>
+    </block>
+
+    <view wx:if='{{list.length == 0}}' style="width: 100%; text-align: center; padding-top: 50%; color: #ccc;">暂无数据</view>
+</view>

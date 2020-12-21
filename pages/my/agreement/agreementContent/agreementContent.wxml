@@ -1,0 +1,4 @@
+<!--pages/my/agreement/agreementContent/agreementContent.wxml-->
+<view class="wrapper">
+    <text space='nbsp' decode>{{content}}</text>
+</view>

@@ -1,0 +1,26 @@
+<!--pages/my/message/message.wxml-->
+<view class='wrapper'>
+    <view class='item'>
+        <view class='left'>
+            <image src='/static/images/icon-my-message-1.png'></image>
+            <view class='content'>
+                <text>公告</text>
+                <text>平台介绍</text>
+            </view>
+        </view>
+
+        <view class='right'>
+            <view>2020-6-03</view>
+            <view>13:08</view>
+        </view>
+    </view>
+
+    <view class='item' bindtap="toMessage">
+        <view class='left'>
+            <image src='/static/images/icon-my-message-2.png'></image>
+            <view class='content'>
+                <text>消息通知</text>
+            </view>
+        </view>
+    </view>
+</view>

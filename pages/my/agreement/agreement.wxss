@@ -1,0 +1,27 @@
+/* pages/my/agreement/agreement.wxss */
+page {
+    background-color: #F8F8F8;
+}
+
+.wrapper {
+    padding-top: 10rpx;
+}
+
+.agr-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28rpx 48rpx;
+    background-color: #fff;
+    box-shadow: 6rpx 8rpx 10rpx 0 rgba(232, 231, 234, 0.54);
+}
+
+.agr-item > text {
+    font-size: 26rpx;
+    color: rgba(117, 117, 117, 1);
+}
+
+.agr-item > image {
+    width: 20rpx;
+    height: 20rpx;
+}

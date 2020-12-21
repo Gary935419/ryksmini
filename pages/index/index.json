@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "如邮快送",
+    "usingComponents": {
+        "c-login": "/components/login/login"
+    }
+}

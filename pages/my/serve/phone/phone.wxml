@@ -1,0 +1,5 @@
+<!--pages/my/serve/phone/phone.wxml-->
+<view class='wrapper'>
+    <text class='content' space="nbsp" decode bindtap="call">{{content}}</text>
+</view>
+

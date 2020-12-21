@@ -1,0 +1,11 @@
+<!--pages/my/message/messageContent/messageContent.wxml-->
+<view class="wrapper">
+    <block wx:for='{{list}}' wx:key='index'>
+        <view class='item'>
+            <view class='title'>{{item.title}}</view>
+            <view class='content'>{{item.content}}</view>
+            <view class='time'>{{item.add_time}}</view>
+        </view>
+    </block>
+    
+</view>

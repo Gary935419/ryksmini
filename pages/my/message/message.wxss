@@ -1,0 +1,49 @@
+/* pages/my/message/message.wxss */
+.wrapper {
+
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10rpx;
+    padding: 32rpx;
+    background-color: #fff;
+    box-shadow: 6rpx 8rpx 10rpx 0 rgba(232, 231, 234, 0.54);
+}
+
+.left {
+    display: flex;
+}
+
+.left > image {
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 26rpx;
+}
+
+.left .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left .content > text {
+    font-size: 32rpx;
+}
+
+.left .content > text:nth-child(1) {
+    margin: 4rpx 0;
+    color: rgba(2, 2, 2, 1);
+}
+
+.left .content > text:nth-child(2) {
+    color: #B8B8B8;
+}
+
+.right {
+    margin-top: 12rpx;
+    text-align: right;
+    font-size: 26rpx;
+    color: #ABABAB;
+}

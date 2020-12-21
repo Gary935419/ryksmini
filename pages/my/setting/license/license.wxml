@@ -1,0 +1,4 @@
+<!--pages/my/setting/license/license.wxml-->
+<view class='wrapper'>
+    <image class='license-img' src='{{licenseImg}}' bindtap="look"></image>
+</view>

@@ -1,0 +1,4 @@
+/* pages/my/serve/shuoming/shuoming.wxss */
+.wrapper {
+    padding: 0 30rpx;
+}

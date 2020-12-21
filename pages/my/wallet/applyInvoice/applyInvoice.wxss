@@ -1,0 +1,75 @@
+/* pages/my/wallet/applyInvoice/applyInvoice.wxss */
+.top {
+    position: relative;
+    width: 100%;
+    height: 156rpx;
+    background: linear-gradient(139deg, rgba(255, 109, 11, 1), rgba(253, 166, 108, 1));
+}
+
+.top > .title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.top>image {
+    position: absolute;
+    left: 30rpx;
+    width: 35rpx;
+    height: 35rpx;
+}
+
+.wrapper {
+
+}
+
+.item {
+    padding: 50rpx 46rpx;
+    border-bottom: 1rpx solid #DCDCDC;
+    font-size: 30rpx;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 1);
+}
+
+.modal {
+    position: absolute;
+    top: 284rpx;
+    left: 0;
+    right: 0;
+    width: 550rpx;
+    margin: 0 auto;
+    background-color: #fff;
+    z-index: 100;
+}
+
+.jijia-modal-wrapper {
+
+}
+
+.kaipiao-modal-wrapper {
+
+}
+
+.title {
+    padding: 38rpx 0;
+    text-align: center;
+    font-size: 34rpx;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 1);
+}
+
+.content {
+    height: 540rpx;
+    padding: 0 30rpx 30rpx;
+    overflow: scroll;
+}
+
+.btn {
+    padding: 30rpx 0;
+    text-align: center;
+    background-color: #FBE1D0;
+    color: #FF7800;
+}

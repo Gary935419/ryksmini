@@ -1,0 +1,33 @@
+/* pages/my/serve/serve.wxss */
+page {
+    background-color: #F8F8F8;
+}
+
+.wrapper {
+
+}
+
+.title {
+    padding: 28rpx 48rpx;
+    font-size: 32rpx;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: rgba(2, 0, 0, 1);
+}
+
+.content {
+    background-color: #fff;
+    box-shadow: 3px 4px 5px 0px rgba(232, 231, 234, 0.54);
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28rpx 48rpx;
+}
+
+.arrow {
+    width: 20rpx;
+    height: 20rpx;
+}

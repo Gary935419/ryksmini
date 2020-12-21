@@ -1,0 +1,4 @@
+/* pages/my/serve/phone/phone.wxss */
+.wrapper {
+    padding: 0 30rpx;
+}

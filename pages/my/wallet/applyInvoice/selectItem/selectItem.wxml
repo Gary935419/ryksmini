@@ -1,0 +1,46 @@
+<!--pages/my/wallet/applyInvoice/selectItem/selectItem.wxml-->
+<view class='wrapper'>
+    <view class='title'>本月</view>
+
+    <view class='choose-item-wrapper'>
+        <view class='choose-item'>
+            <checkbox checked="true"></checkbox>
+            <view class='middle'>
+                <view class='item-title'>取货订单</view>
+                <view class='time'>
+                    <image src='/static/images/icon-my-order-time.png'></image>
+                    <text class='time-txt'>6月3日</text>
+                    <text class='time-txt'>11：50</text>
+                </view>
+                <view class='black-dot-wrapper'>
+                    <view class='black-dot'></view>
+                    <view class='black-txt'>******地点</view>
+                </view>
+                <view class='yellow-dot-wrapper'>
+                    <view class='yellow-dot'></view>
+                    <view class='yellow-txt'>******地点</view>
+                </view>
+            </view>
+            <view class='right'>￥18.00</view>
+        </view>
+    </view>
+</view>
+
+<view class='bottom'>
+    <view class='left-wrapper'>
+        <view class='sel-all-wrapper'>
+            <radio class='sel-all-radio' checked="{{selAllChecked}}" bindtap="handleSelAll"></radio>
+            <text class='sel-all-txt' bindtap="handleSelAll">全选</text>
+        </view>
+
+        <view class='price'>
+            <text>0</text>
+            <text>个行程 </text>
+            <text> 共</text>
+            <text>0.00</text>
+            <text>元</text>
+        </view>
+    </view>
+
+    <view class='next-btn' bindtap="toWritePage">下一步</view>
+</view>

@@ -1,0 +1,94 @@
+/* pages/my/order/order.wxss */
+page {
+    background-color: #F5F5F4;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 56rpx;
+    padding-bottom: 10rpx;
+    background-color: #fff;
+    box-shadow: 6rpx 8rpx 10rpx 0 rgba(232, 231, 234, 0.54);
+}
+
+.nav-item {
+    font-size: 30rpx;
+}
+
+.nav-item.active {
+    position: relative;
+    color: #FF9046;
+}
+
+.nav-item.active::after {
+    position: absolute;
+    content: '';
+    bottom: -5rpx;
+    left: 0;
+    right: 0;
+    width: 48rpx;
+    margin: 0 auto;
+    background-color: #FF6803;
+    height: 4rpx;
+}
+
+.list-wrapper {
+
+}
+
+.list-item {
+    margin-bottom: 10rpx;
+    padding-top: 56rpx;
+    height: 252rpx;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.list-item .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28rpx;
+    padding: 0 28rpx;
+}
+
+.list-item .top .title {
+    display: flex;
+    align-items: center;
+    font-size: 32rpx;
+    font-weight: 400;
+    color: rgba(53, 53, 53, 1);
+}
+
+.list-item .top .status {
+    display: flex;
+    align-items: center;
+    font-size: 26rpx;
+    color: #B3B3B3;
+}
+
+.list-item .top .status > image {
+    width: 20rpx;
+    height: 20rpx;
+    margin-left: 12rpx;
+}
+
+.list-item .down {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32rpx;
+}
+
+.list-item .down image {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 20rpx;
+}
+
+.list-item .down text {
+    font-size: 28rpx;
+    font-weight: 400;
+    color: #5A5A5A;
+}

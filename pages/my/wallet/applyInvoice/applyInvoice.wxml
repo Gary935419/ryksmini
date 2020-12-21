@@ -1,0 +1,35 @@
+<!--pages/my/wallet/applyInvoice/applyInvoice.wxml-->
+<view class='top'>
+    <view class='title' style="top: {{statusBarHeight + 8}}px;">申请发票</view>
+    <image 
+        style="top: {{statusBarHeight + 12}}px;" 
+        src="/static/images/icon-arrow-left.png"
+        bindtap="goBack"
+    ></image>
+</view>
+
+<view class='wrapper'>
+    <view class='item' bindtap="toApplyInvoice">申请发票</view>
+    <view class='item'>开票记录</view>
+    <view class='item' bindtap="handleShowKaipiaoModal">开票说明</view>
+    <view class='item' bindtap="handleShowJijiaModal">计价说明</view>
+</view>
+
+<c-mask maskState='{{showJijiaModal}}'></c-mask>
+<c-mask maskState='{{showKaipiaoModal}}'></c-mask>
+
+<view class='modal jijia-modal-wrapper' hidden="{{!showJijiaModal}}">
+    <view class='title'>计价说明</view>
+    <view class="content">
+        <text space="nbsp" decode>{{jijiaContent}}</text>
+    </view>
+    <view class='btn' data-type='jijia' bindtap="closeModal">我知道了</view>
+</view>
+
+<view class='modal kaipiao-modal-wrapper' hidden="{{!showKaipiaoModal}}">
+    <view class='title'>计价说明</view>
+    <view class="content">
+        <text space="nbsp" decode>{{kaipiaoContent}}</text>
+    </view>
+    <view class='btn' data-type='kaipiao' bindtap="closeModal">我知道了</view>
+</view>

@@ -1,0 +1,4 @@
+/* pages/my/agreement/agreementContent/agreementContent.wxss */
+.wrapper {
+    padding: 20rpx;
+}

@@ -1,0 +1,89 @@
+<!--pages/my/order/evaluateDriver/evaluateDriver.wxml-->
+<map class="map"></map>
+
+<cover-view class="wrapper">
+    <cover-view class="name-wrapper">
+        <cover-view class='avatar-wrapper'>
+            <cover-image class='avatar' src="/static/images/icon-my-avatar-placeholder.png"></cover-image>
+            <cover-view class='name'>王师傅</cover-view>
+        </cover-view>
+        <cover-view class="cart-info-wrapper">
+            <cover-view style="text-align: right;">辽B 992020</cover-view>
+            <cover-view>蓝色 启辰d60</cover-view>
+        </cover-view>
+    </cover-view>
+
+    <cover-view class='action-wrapper'>
+        <cover-view class='action-item'>
+            <cover-image 
+                style="width: 26rpx; height: 30rpx; margin-bottom: 20rpx;"
+                src="/static/images/icon-evaluate-serve.png"
+            ></cover-image>
+            <cover-view>客服</cover-view>
+        </cover-view>
+        <cover-view class='action-item'>
+            <cover-image 
+                style="width: 30rpx; height: 30rpx; margin-bottom: 20rpx;"
+                src="/static/images/icon-evaluate-fankui.png"
+            ></cover-image>
+            <cover-view>问题反馈</cover-view>
+        </cover-view>
+        <cover-view class='action-item'>
+            <cover-image 
+                style="width: 34rpx; height: 30rpx; margin-bottom: 20rpx;"
+                src="/static/images/icon-evaluate-message.png"
+            ></cover-image>
+            <cover-view>发消息</cover-view>
+        </cover-view>
+        <cover-view class='action-item' style="border-right: none;">
+            <cover-image 
+                style="width: 34rpx; height: 34rpx; margin-bottom: 14rpx;"
+                src="/static/images/icon-evaluate-phone.png"
+            ></cover-image>
+            <cover-view>打电话</cover-view>
+        </cover-view>
+    </cover-view>
+
+    <cover-view class='price-wrapper'>
+        <cover-view class='price'>￥18.00</cover-view>
+        <cover-view class='price-bottom'>
+            <cover-view class='price-action-item'>
+                <cover-view class='price-action-item-title'>费用明细</cover-view>
+                <cover-image 
+                    class='price-action-item-img' 
+                    src="/static/images/icon-arrow-right-gray.png"
+                ></cover-image>
+            </cover-view>
+            <cover-view class='price-action-item'>
+                <cover-view class='price-action-item-title'>发票与报销</cover-view>
+                <cover-image 
+                    class='price-action-item-img' 
+                    src="/static/images/icon-arrow-right-gray.png"
+                ></cover-image>
+            </cover-view>
+        </cover-view>
+    </cover-view>
+
+    <cover-view class='eval-wrapper'>
+        <cover-view class='eval'>
+            <cover-view class='eval-title'>对司机还满意吗？</cover-view>
+            <cover-view class='eval-tag'>匿名</cover-view>
+        </cover-view>
+
+        <cover-view class='eval-bottom'>
+            <cover-view class='btn-wrapper'>
+                <cover-image class='btn-img' src="/static/images/icon-evaluate-not.png"></cover-image>
+                <cover-view class='btn-txt'>不满意</cover-view>
+            </cover-view>
+            <cover-view class='btn-wrapper'>
+                <cover-image class='btn-img' src="/static/images/icon-evaluate-good.png"></cover-image>
+                <cover-view class='btn-txt'>满意</cover-view>
+            </cover-view>
+        </cover-view>
+    </cover-view>
+
+    <cover-view class='share-wrapper'>
+        <cover-image class='share-icon' src='/static/images/icon-evaluate-share.png'></cover-image>
+        <cover-view>分享有礼</cover-view>
+    </cover-view>
+</cover-view>

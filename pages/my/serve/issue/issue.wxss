@@ -1,0 +1,4 @@
+/* pages/my/serve/issue/issue.wxss */
+.wrapper {
+    padding: 0 30rpx;
+}

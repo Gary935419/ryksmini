@@ -1,0 +1,392 @@
+/**index.wxss**/
+page {
+    background-color: #fff;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 120rpx;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 85rpx;
+    background: #fff;
+}
+
+.nav {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 24rpx;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.nav-item {
+    display: inline-block;
+    height: 100%;
+    line-height: 65rpx;
+}
+
+.nav-item.active {
+    position: relative;
+    color: #fc975c;
+}
+
+.nav-item.active::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    bottom: 12rpx;
+    width: 48rpx;
+    height: 6rpx;
+    margin: 0 auto;
+    background-color: #fc975c;
+}
+
+.icon_img {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.icon_img.me {
+    margin-left: 30rpx;
+    margin-right: 20rpx;
+}
+
+.icon_img.menu {
+    margin-left: 20rpx;
+    margin-right: 30rpx;
+}
+
+.map-wrapper {
+
+}
+
+.map {
+    width: 100%;
+    height: 476rpx;
+}
+
+.notice-wrapper {
+    position: relative;
+    padding: 20rpx 20rpx 20rpx 100rpx;
+    font-size: 28rpx;
+    background-color: antiquewhite;
+    overflow: hidden;
+}
+
+.notice-wrapper .title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 85rpx;
+    height: 100%;
+    padding-left: 20rpx;
+    line-height: 80rpx;
+    background-color: antiquewhite;
+    z-index: 1;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(110%);
+    }
+
+    100% {
+        transform: translateX(-250%);
+    }
+}
+
+.notice-wrapper .notice-inner {
+    display: block;
+    white-space: nowrap;
+    animation: move 30s linear infinite;
+}
+
+/* 功能部分 */
+.action-wrapper {
+
+}
+
+/* 帮我取 */
+.get-wrapper {
+
+}
+
+.get-wrapper .choose {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60rpx 0;
+    background-color: #fff;
+    box-shadow: 0 10rpx 10rpx 0 rgba(0, 0, 0, 0.23);
+}
+
+.get-wrapper .choose2 {
+    justify-content: flex-start;
+    padding-left: 26rpx;
+}
+
+.get-wrapper .choose .title {
+    font-size: 32rpx;
+    font-weight: 500;
+}
+
+.get-wrapper .choose2 .title {
+    width: 160rpx;
+}
+
+.get-wrapper .choose .radio-group {
+    display: flex;
+    align-items: center;
+}
+
+.get-wrapper .choose .radio-group .label {
+    display: flex;
+    align-items: center;
+    margin-right: 20rpx;
+}
+
+.get-wrapper .choose .radio-group .label radio {
+    transform: scale(0.5);
+}
+
+.get-wrapper .choose .radio-group .label .name {
+    font-size: 28rpx;
+}
+
+.choose2-form-wrapper {
+    padding: 20rpx;
+}
+
+.choose2-form-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+
+.choose2-form-label {
+    margin-right: 20rpx;
+}
+
+.choose2-form-value {
+    flex: 1;
+    color: #999;
+}
+
+.get-wrapper .func {
+    padding: 24rpx 40rpx;
+    background: linear-gradient(0deg, rgba(255, 119, 28, 1) 0%,rgba(255, 198, 159, 1) 100%);
+}
+
+.get-wrapper .func .write-wrapper,
+.get-wrapper .func .select-wrapper {
+    background-color: #fff;
+    box-shadow: 6rpx 8rpx 10rpx 0 rgba(0, 0, 0, 0.23);
+    border-radius: 20rpx;
+}
+
+.get-wrapper .func .write-wrapper, 
+.get-wrapper .func .select-wrapper {
+    padding: 30rpx;
+}
+
+.get-wrapper .func .write-wrapper .write-item,
+.get-wrapper .func .select-wrapper .write-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+
+/* .get-wrapper .func .write-wrapper .write-item:nth-child(1),
+.get-wrapper .func .select-wrapper .write-item:nth-child(1) {
+    margin-bottom: 20rpx;
+} */
+
+.get-wrapper .func .write-wrapper .write-item>input,
+.get-wrapper .func .select-wrapper .write-item>input {
+    flex: 1;
+    padding-bottom: 10rpx;
+    border-bottom: 1rpx solid #ccc;
+}
+
+
+.get-wrapper .func .write-wrapper {
+    margin-bottom: 20rpx;
+}
+
+.get-wrapper .func .select-wrapper {
+
+}
+
+/* 代驾 */
+.get-wrapper .driving-btn-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 150rpx;
+    background: #fff;
+    box-shadow: 0 10rpx 10rpx 0 rgba(0, 0, 0, 0.23);
+}
+
+.get-wrapper .driving-btn-wrapper .btn {
+    width: 192rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 24rpx;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 10rpx 10rpx 0 rgba(90, 86, 86, 0.35);
+    border-radius: 40rpx;
+}
+
+.get-wrapper .driving-btn-wrapper .btn.active {
+    background-color: #FD761B;
+    color: #fff;
+}
+
+.submit-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30rpx 45rpx;
+    background-color: #fff;
+    box-shadow: 0 -4rpx 24rpx 0 rgba(0, 0, 0, 0.1);
+    z-index: 300;
+}
+
+.submit-wrapper .submit-btn {
+    width: 240rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    margin: 0;
+    padding: 0 20rpx;
+    font-size: 28rpx;
+    background-color: #fdcd15;
+    border-radius: 20rpx;
+    color: #333;
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translate(0, 100%);
+        -webkit-transform: translate(0, 100%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+        -webkit-transform: translate(0, 0);
+    }
+}
+
+@-webkit-keyframes fadeInUp{
+    0% {
+        transform: translate(0, 100%);
+        -webkit-transform: translate(0, 100%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+        -webkit-transform: translate(0, 0);
+    }
+}
+
+.reward-wrapper {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 444rpx;
+    background-color: #fff;
+    transform: translate(0, 100%);
+    z-index: 801;
+}
+
+.reward-wrapper.reward-wrapper-show {
+    animation: fadeInUp 0.3s forwards;
+}
+
+.reward-wrapper .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 44rpx;
+    padding: 30rpx 0;
+    font-size: 28rpx;
+    border-bottom: 1rpx solid #D5D5D5;
+}
+
+.reward-wrapper .select-price {
+    padding: 18rpx 136rpx;
+}
+
+.reward-wrapper .select-price .item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reward-wrapper .select-price .item .price-item {
+    width: 176rpx;
+    height: 68rpx;
+    margin: 18rpx 0;
+    line-height: 68rpx;
+    text-align: center;
+    font-size: 28rpx;
+    border: 1rpx solid rgba(213, 213, 213, 0.53);
+    border-radius: 14rpx;
+    color: #484141;
+}
+
+.reward-wrapper .select-price .item .price-item.active {
+    background-color: #FF9046;
+    color: #fff;
+    border: none;
+}
+
+.reward-wrapper .input-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 0 70rpx;
+    padding: 12rpx 24rpx 12rpx 144rpx;
+    border-radius: 20rpx;
+    border: 1rpx solid rgba(213, 213, 213, 0.53);
+}
+
+.reward-wrapper .input-wrapper input {
+    flex: 1;
+    font-size: 28rpx;
+    color: #484141;
+}
+
+.input-address-detail {
+    margin-bottom: 20rpx;
+    padding-left: 40rpx;
+    padding-bottom: 10rpx;
+    border-bottom: 1rpx solid #ccc;
+}
+
+.normal-btn {
+    padding: 10rpx 20rpx;
+    font-size: 28rpx;
+    border: 1rpx solid #ccc;
+    border-radius: 8rpx;
+}
+
+
+
+/* 修改radio默认样式 */
+radio .wx-radio-input {
+    border-radius: 0;
+}

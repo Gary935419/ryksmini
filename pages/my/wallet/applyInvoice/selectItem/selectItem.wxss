@@ -1,0 +1,153 @@
+/* pages/my/wallet/applyInvoice/selectItem/selectItem.wxss */
+page {
+    background-color: #F2F2F2;
+}
+
+.wrapper {
+    padding: 56rpx 38rpx;
+}
+
+.title {
+    margin-bottom: 26rpx;
+    font-size: 24rpx;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: rgba(105, 103, 103, 1);
+}
+
+.choose-item-wrapper {
+
+}
+
+.choose-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32rpx 44rpx 32rpx 16rpx;
+    background-color: #fff;
+    box-shadow: 3px 4px 5px 0px rgba(232,231,234,0.54);
+}
+
+.choose-item > checkbox {
+    margin-right: 40rpx;
+}
+
+.middle {
+    flex: 1;
+}
+
+.item-title {
+    margin-bottom: 32rpx;
+    font-size: 28rpx;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(53, 53, 53, 1);
+}
+
+.time {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22rpx;
+}
+
+.time > image {
+    width: 20rpx;
+    height: 20rpx;
+    margin-right: 10rpx;
+}
+
+.time .time-txt {
+    font-size: 18rpx;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 1);
+}
+
+.black-dot-wrapper {
+    margin-bottom: 20rpx;
+}
+
+.black-dot-wrapper,
+.yellow-dot-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.black-dot,
+.yellow-dot {
+    width: 20rpx;
+    height: 20rpx;
+    margin-right: 10rpx;
+    border-radius: 50%;
+    background-color: #000;
+}
+
+.yellow-dot {
+    background-color: #FDCD15;
+}
+
+.black-txt,
+.yellow-txt {
+    font-size: 18rpx;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(130,129,129,1);
+}
+
+.right {
+    font-size: 32rpx;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color:rgba(16,177,20,1);
+}
+
+.bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 116rpx;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.price {
+    font-size: 24rpx;
+}
+
+.left-wrapper {
+    flex: 1;
+    padding: 26rpx 0 20rpx 42rpx;
+}
+
+.sel-all-radio {
+    
+}
+
+.sel-all-txt {
+    font-size: 28rpx;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(53, 53, 53, 1);
+}
+
+.next-btn {
+    width: 192rpx;
+    height: 116rpx;
+    line-height: 116rpx;
+    text-align: center;
+    background-color: #94918E;
+    color: #353535;
+}
+
+radio .wx-radio-input {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+checkbox .wx-checkbox-input {
+    width: 30rpx;
+    height: 30rpx;
+}

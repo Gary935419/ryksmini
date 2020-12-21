@@ -1,0 +1,42 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/pay/pay",
+        "pages/my/my",
+        "pages/my/order/order",
+        "pages/my/agreement/agreement",
+        "pages/my/message/message",
+        "pages/my/wallet/wallet",
+        "pages/my/setting/setting",
+        "pages/my/serve/serve",
+        "pages/my/setting/aboutUs/aboutUs",
+        "pages/my/setting/usualAddress/usualAddress",
+        "pages/my/wallet/applyInvoice/applyInvoice",
+        "pages/my/wallet/applyInvoice/selectItem/selectItem",
+        "pages/my/wallet/applyInvoice/selectItem/writeInvoice/writeInvoice",
+        "pages/my/order/evaluateDriver/evaluateDriver",
+        "pages/index/coupon/coupon",
+        "pages/my/agreement/agreementContent/agreementContent",
+        "pages/my/message/messageContent/messageContent",
+        "pages/my/guide/guide",
+        "pages/my/serve/issue/issue",
+        "pages/my/serve/shuoming/shuoming",
+        "pages/my/serve/phone/phone",
+        "pages/my/setting/license/license",
+        "pages/my/wallet/myCoupon/myCoupon",
+        "pages/my/setting/recruit/recruit"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于小程序功能使用"
+        }
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

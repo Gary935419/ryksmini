@@ -1,0 +1,4 @@
+<!--pages/my/serve/issue/issue.wxml-->
+<view class='wrapper'>
+    <text class='content' space="nbsp" decode>{{content}}</text>
+</view>

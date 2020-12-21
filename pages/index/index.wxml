@@ -1,0 +1,444 @@
+<!--index.wxml-->
+<view class="container">
+
+	<view class="section">
+		<view class="nav-me" bindtap="toMy">
+			<image class='icon_img me' src="/static/images/icon-me.png" mode="aspectFill" />
+		</view>
+
+		<scroll-view 
+			class="nav" 
+			enable-flex
+            scroll-x="true" 
+        >
+			<block wx:for="{{navData}}" wx:key="index">
+				<view 
+                    class="nav-item {{currentTab == index ? 'active' : ''}}" 
+                    data-name="{{item.name}}" 
+                    data-current="{{index}}" 
+                    bindtap="switchNav"
+                >{{item.name}}</view>
+			</block>
+		</scroll-view>
+
+		<view class="nav-all">
+			<image class='icon_img menu' src="/static/images/icon-menu.png" mode="aspectFill" />
+		</view>
+	</view>
+
+	<view class='map-wrapper'>
+		<map 
+			id='hook-map'
+			class='map' 
+			markers="{{markers}}" 
+			latitude="{{latitude}}" 
+			longitude="{{longitude}}"
+			bindregionchange="mapRegionChange"
+		></map>
+	</view>
+
+	<view class='notice-wrapper'>
+		<text class='title'>公告：</text>
+		<text class="notice-inner">这是一条公告，这是一条公告，这是一条公告，这是一条公告，这是一条公告，这是一条公告，这是一条公告，这是一条公告，</text>
+	</view>
+
+	<view class='action-wrapper'>
+		<view class='get-wrapper'>
+			<!-- 代买选项 -->
+			<view
+				class='driving-btn-wrapper' 
+				wx:if="{{currentTab == 2}}"
+			>
+				<view 
+					class='btn {{currentBtn1 == 0 ? "active" : ""}}' 
+					data-index='0'
+					bindtap="changeBtn1"
+				>指定地址</view>
+				<view 
+					class='btn {{currentBtn1 == 1 ? "active" : ""}}' 
+					data-index='1'
+					bindtap="changeBtn1"
+				>附近地址</view>
+			</view>
+            <!-- 代驾选项 -->
+			<view 
+				class='driving-btn-wrapper' 
+				wx:if="{{currentTab == 3}}"
+			>
+				<view 
+					class='btn {{currentBtn == 0 ? "active" : ""}}' 
+					data-index='0'
+					bindtap="changeBtn"
+				>日常代驾</view>
+				<view 
+					class='btn {{currentBtn == 1 ? "active" : ""}}' 
+					data-index='1'
+					bindtap="changeBtn"
+				>包时代驾</view>
+			</view>
+
+			<view class='func'>
+				<view class='write-wrapper'>
+					<view class='choose2-form-item'>
+						<view class='choose2-form-label'>选择日期：</view>
+						<view class='choose2-form-value'>
+							<picker 
+								mode="date" 
+								value="{{pickerDate}}" 
+								start="2020-07-01"  
+								bindchange="bindDateChange"
+							>
+							<view class="picker">
+								<text>{{pickerDate}}</text>
+							</view>
+						</picker>
+						</view>
+					</view>
+					<view class='choose2-form-item'>
+						<view class='choose2-form-label'>选择时间：</view>
+						<view class='choose2-form-value'>
+							<picker 
+								mode="time" 
+								value="{{pickerTime}}" 
+								bindchange="bindTimeChange"
+							>
+								<view class="picker">
+									<text>{{pickerTime}}</text>
+								</view>
+							</picker>
+						</view>
+					</view>
+					<!-- 地点1 -->
+					<view class='write-item' wx:if="{{currentTab != 2}}">
+						<image 
+							style="width: 30rpx; height: 30rpx; margin-right: 20rpx;" 
+							src="/static/images/icon-location.png" 
+							mode="aspectFill"
+						></image>
+						<input 
+							hidden="{{currentTab != 0}}"
+							disabled
+							placeholder="请选择送达信息(必填项)" 
+							placeholder-style="font-size: 28rpx; color: #999"
+							data-type='请选择送达信息(必填项)'
+							data-index='0'
+							value="{{writeItemArr[0].value}}"
+							bindtap="onInputTap"
+						></input>
+						<input 
+							hidden="{{currentTab == 0 || currentTab == 3}}"
+							disabled
+							placeholder="请选择起点位置(必填项)" 
+							placeholder-style="font-size: 28rpx; color: #999"
+							data-type='请选择起点位置(必填项)'
+							data-index='0'
+							value="{{writeItemArr[0].value}}"
+							bindtap="onInputTap"
+						></input>
+						<input 
+							hidden="{{currentTab != 3}}"
+							disabled
+							placeholder="您在哪(必填项)" 
+							placeholder-style="font-size: 28rpx; color: #999"
+							data-type='您在哪(必填项)'
+							data-index='0'
+							value="{{writeItemArr[0].value}}"
+							bindtap="onInputTap"
+						></input>
+						<image 
+							style="width: 25rpx; height: 25rpx; margin: 0 40rpx 0 20rpx;" 
+							src="/static/images/icon-arrow-right.png" 
+							mode="aspectFill"
+						></image>
+						<view class='normal-btn'>常用</view>
+					</view>
+                    <view class='write-item' wx:if="{{currentTab == 2 && currentBtn1 != 1}}">
+						<image 
+							style="width: 30rpx; height: 30rpx; margin-right: 20rpx;" 
+							src="/static/images/icon-location.png" 
+							mode="aspectFill"
+						></image>
+						<input 
+							hidden="{{currentTab == 3 || currentBtn1 == 1}}"
+							disabled
+							placeholder="请选择起点位置(必填项)" 
+							placeholder-style="font-size: 28rpx; color: #999"
+							data-type='请选择起点位置(必填项)'
+							data-index='0'
+							value="{{writeItemArr[0].value}}"
+							bindtap="onInputTap"
+						></input>
+						<image 
+							style="width: 25rpx; height: 25rpx; margin: 0 40rpx 0 20rpx;" 
+							src="/static/images/icon-arrow-right.png" 
+							mode="aspectFill"
+						></image>
+						<view class='normal-btn'>常用</view>
+					</view>
+					<input 
+						class="input-address-detail"
+						hidden="{{currentBtn1 == 1}}"
+						placeholder="请输入地址详情"
+						placeholder-style="font-size: 28rpx; color: #999"
+						value="{{writeItemArr[0].addressDetail}}"
+						bindinput="inputAddressDetailFirst"
+					></input>
+<!-- 					<view style="display: flex;flex-direction: row;justify-content: flex-start;">
+						<input
+							class="input-address-detail"
+							hidden="{{currentTab == 2 || currentTab == 3}}"
+							placeholder="姓名"
+							placeholder-style="font-size: 28rpx; color: #999;"
+							value="{{writeItemArr[0].name}}"
+							bindinput="inputNameFirst"
+							style="width: 40%;"
+						></input>
+						<input
+							class="input-address-detail"
+							hidden="{{currentTab == 2 || currentTab == 3}}"
+							placeholder="电话"
+							type="number"
+							placeholder-style="font-size: 28rpx; color: #999"
+							value="{{writeItemArr[0].tel}}"
+							bindinput="inputTelFirst"
+							style="width: 60%;margin-left: 10%;"
+						></input>
+					</view> -->
+                    
+					<!-- 地点2 -->
+					<view class='write-item'>
+						<image 
+							style="width: 30rpx; height: 30rpx; margin-right: 20rpx;" 
+							src="/static/images/icon-location2.png" 
+							mode="aspectFill"
+						></image>
+						<input 
+							hidden="{{currentTab != 0}}"
+							disabled
+							placeholder="请选择取单信息(必填项)" 
+							placeholder-style="font-size: 28rpx; color: #999"
+							style=""
+							data-type='请选择取单信息(必填项)'
+							data-index='1'
+							value="{{writeItemArr[1].value}}"
+							bindtap="onInputTap"
+						></input>
+						<input 
+							hidden="{{currentTab == 0 || currentTab == 3}}"
+							disabled
+							placeholder="请选择终点位置(必填项)" 
+							placeholder-style="font-size: 28rpx; color: #999"
+							style=""
+							data-type='请选择终点位置(必填项)'
+							data-index='1'
+							value="{{writeItemArr[1].value}}"
+							bindtap="onInputTap"
+						></input>
+						<input 
+							hidden="{{currentTab != 3}}"
+							disabled
+							placeholder="您要去哪儿(必填项)" 
+							placeholder-style="font-size: 28rpx; color: #999"
+							style=""
+							data-type='您要去哪儿(必填项)'
+							data-index='1'
+							value="{{writeItemArr[1].value}}"
+							bindtap="onInputTap"
+						></input>
+						<image 
+							style="width: 25rpx; height: 25rpx; margin: 0 40rpx 0 20rpx;" 
+							src="/static/images/icon-arrow-right.png" 
+							mode="aspectFill"
+						></image>
+						<view class='normal-btn'>常用</view>
+					</view>
+
+					<input 
+						class="input-address-detail"
+						placeholder="请输入地址详情"
+						placeholder-style="font-size: 28rpx; color: #999"
+						value="{{writeItemArr[1].addressDetail}}"
+						bindinput="inputAddressDetailSecond"
+					></input>
+					<view style="display: flex;flex-direction: row;justify-content: flex-start;">
+						<input
+							class="input-address-detail"
+							placeholder="姓名(必填项)"
+							placeholder-style="font-size: 28rpx; color: #999;"
+							value="{{writeItemArr[1].name}}"
+							bindinput="inputNameSecond"
+							style="width: 40%;"
+						></input>
+						<input
+							class="input-address-detail"
+							type="number"
+							placeholder="电话(必填项)"
+							placeholder-style="font-size: 28rpx; color: #999"
+							value="{{writeItemArr[1].tel}}"
+							bindinput="inputTelSecond"
+							style="width: 60%;margin-left: 10%;"
+						></input>
+					</view>
+				</view>
+				<view class='select-wrapper'>
+					<!-- 优惠券 -->
+					<view class='write-item' data-name='优惠券' bindtap="toNext">
+						<image 
+							style="width: 30rpx; height: 30rpx; margin-right: 20rpx;" 
+							src="/static/images/icon-quan.png" 
+							mode="aspectFill"
+						></image>
+						<input 
+							disabled
+							placeholder="{{couponItemData == null ? '优惠券':couponItemData.money}}" 
+							placeholder-style="font-size: 28rpx; color: #999"
+						></input>
+						<image 
+							style="width: 25rpx; height: 25rpx; margin-left: 20rpx;" 
+							src="/static/images/icon-arrow-right.png" 
+							mode="aspectFill"
+						></image>
+					</view>
+					<view class='write-item' data-name='小费' bindtap="toNext">
+						<image 
+							style="width: 30rpx; height: 30rpx; margin-right: 20rpx;" 
+							src="/static/images/icon-xiaofei.png" 
+							mode="aspectFill"
+						></image>
+						<input 
+							disabled
+							placeholder="{{currentPrice == -1 ? (rewardPrice == '' ? '小费' : rewardPrice) : (tipsArr[currentPrice].price)}}" 
+							placeholder-style="font-size: 28rpx; color: #999"
+						></input>
+						<image 
+							style="width: 25rpx; height: 25rpx; margin-left: 20rpx;" 
+							src="/static/images/icon-arrow-right.png" 
+							mode="aspectFill"
+						></image>
+					</view>
+					<view wx:if='{{currentTab < 3}}'>
+						<view class='write-item' style="padding: 10rpx" data-name='物品信息'>
+							<input 
+								placeholder="请输入物品信息" 
+								placeholder-style="font-size: 28rpx; color: #999"
+								style="padding-bottom: 10rpx; padding-left: 40rpx;"
+								value="{{goods_name}}"
+								bindinput="inputGoodname"
+							></input>
+						</view>
+					</view>
+					<view wx:if='{{currentTab < 2}}'>
+					<view class='write-item' data-name='保价费' bindtap="toNext">
+						<image 
+							style="width: 30rpx; height: 30rpx; margin-right: 20rpx;" 
+							src="/static/images/icon-xiaofei.png" 
+							mode="aspectFill"
+						></image>
+						<input 
+							disabled
+							placeholder="{{(protect_price == '' ? '保价费' : protect_price)}}" 
+							placeholder-style="font-size: 28rpx; color: #999"
+						></input>
+						<image 
+							style="width: 25rpx; height: 25rpx; margin-left: 20rpx;" 
+							src="/static/images/icon-arrow-right.png" 
+							mode="aspectFill"
+						></image>
+					</view>
+					</view>
+					<view class='write-item' style="padding: 10rpx" data-name='备注'>
+						<input 
+							placeholder="请输入备注" 
+							placeholder-style="font-size: 28rpx; color: #999"
+							style="padding-bottom: 10rpx; padding-left: 40rpx;"
+							value="{{remarks}}"
+							bindinput="inputRemarks"
+						></input>
+					</view>
+					<view wx:if='{{currentTab < 2}}'>
+					    <view style="color: red;">温馨提示：物品不超过0.4立方米，不超过50公斤。</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<view class='submit-wrapper'>
+		<view>
+			<text>总价: </text>
+			<text style="color: red;">{{totalPrice}}元</text>
+		</view>
+
+		<button class='submit-btn' bindtap="submitOrder">提交订单</button>
+	</view>
+
+	<!-- 小费 -->
+	<view class='mask' hidden="{{hideReward}}" bindtap="closeReward"></view>
+	<view 
+		class='reward-wrapper {{!hideReward ? "reward-wrapper-show" : "reward-wrapper-hide"}}' hidden="{{hideReward}}"
+	>
+		<view class='title'>
+			<text data-type='cancel' bindtap="closeReward">取消</text>
+			<text style="font-weight: 500;">打赏</text>
+			<text style="color: #FF9046" data-type='sure' bindtap="closeReward">确定</text>
+		</view>
+		<view class='select-price'>
+			<view class='item'>
+				<view 
+					class='price-item {{currentPrice == 0 ? "active" : ""}}' 
+					data-index='0'
+					bindtap="changePrice"
+				>￥2</view>
+				<view 
+					class='price-item {{currentPrice == 1 ? "active" : ""}}'
+					data-index='1'
+					bindtap="changePrice"
+				>￥6</view>
+			</view>
+			<view class='item'>
+				<view 
+					class='price-item {{currentPrice == 2 ? "active" : ""}}'
+					data-index='2'
+					bindtap="changePrice"
+				>￥10</view>
+				<view 
+					class='price-item {{currentPrice == 3 ? "active" : ""}}'
+					data-index='3'
+					bindtap="changePrice"
+				>￥12</view>
+			</view>
+		</view>
+		<view class='input-wrapper'>
+			<text style="font-size: 28rpx; color: #989898">其它金额：</text>
+			<input value="{{rewardPrice}}" type="number" bindfocus="priceInputFocus" bindinput="priceInput"></input>
+		</view>
+	</view>
+	
+	<!-- 保价费 -->
+	<view class='mask' hidden="{{hideProtect}}" bindtap="closeProtect"></view>
+	<view 
+		class='reward-wrapper {{!hideProtect ? "reward-wrapper-show" : "reward-wrapper-hide"}}' hidden="{{hideProtect}}"
+	>
+		<view class='title'>
+			<text data-type='cancel' bindtap="closeProtect">取消</text>
+			<text style="font-weight: 500;">保价费计算</text>
+			<text style="color: #FF9046" data-type='sure' bindtap="closeProtect">确定</text>
+		</view>
+		<view class='select-price'>
+			<view class='item'>
+				<view class='price-item active' style="width: 100%;">￥ {{protect_price}}</view>
+			</view>
+		</view>
+		<view class='input-wrapper'>
+			<text style="font-size: 28rpx; color: #989898">代保金额：</text>
+			<input value="{{protect_price_now}}" type="number" bindinput="priceInputhideProtect"></input>
+		</view>
+	</view>
+	
+</view>
+
+<c-login 
+	isHidden='{{hideLogin}}' 
+	bind:loginResult='loginResult'
+	bind:closeLogin='closeLogin'
+></c-login>

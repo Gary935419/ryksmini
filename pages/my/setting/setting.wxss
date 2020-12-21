@@ -1,0 +1,42 @@
+/* pages/my/setting/setting.wxss */
+page {
+    background-color: #F5F5F4;
+}
+
+.main-wrapper {
+    margin-top: 8rpx;
+}
+
+.main-wrapper .action-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40rpx;
+    height: 108rpx;
+    border-bottom: 1rpx solid #DCDCDC;
+    background: #fff;
+}
+
+.main-wrapper .action-item > text {
+    font-size: 32rpx;
+    font-weight: 400;
+    color: #757575;
+}
+
+.main-wrapper .action-item .arrow {
+    width: 20rpx;
+    height: 20rpx;
+}
+
+.main-wrapper .action-item:nth-last-child(-n + 2) {
+    border: none;
+}
+
+.action-item.logout {
+    justify-content: center;
+    margin-top: 50rpx;
+}
+
+.action-item.logout > text {
+    color: #FF8F45;
+}

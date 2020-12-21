@@ -1,0 +1,4 @@
+/* pages/my/guide/guide.wxss */
+.wrapper {
+    padding: 0 30rpx;
+}

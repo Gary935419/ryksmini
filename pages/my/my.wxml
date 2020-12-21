@@ -1,0 +1,87 @@
+<!--pages/my/my.wxml-->
+<view class='top'>
+    <view class='title' style="top: {{statusBarHeight + 8}}px;">个人中心</view>
+    <view class='avatar-wrapper'>
+        <image wx:if='{{userId}}' src='{{userInfo.head_img}}'></image>
+        <image wx:else src='/static/images/icon-my-avatar-placeholder.png' bindtap="handleShowLogin"></image>
+        <text wx:if='{{userId}}'>{{userInfo.name}}</text>
+        <text wx:else bindtap="handleShowLogin">请登录</text>
+    </view>
+    <image 
+        style="top: {{statusBarHeight + 12}}px;" 
+        src="/static/images/icon-arrow-left.png"
+        bindtap="goBack"
+    ></image>
+</view>
+
+<view class='main-wrapper'>
+    <view class='action-item' data-index='0' bindtap="toNext">
+        <image 
+            src='/static/images/icon-my-1.png' 
+            style="width: 24rpx; height: 24rpx; margin-right: 20rpx"
+        ></image>
+        <text>订单</text>
+    </view>
+
+    <view class='action-item' data-index='1' bindtap="toNext">
+        <image 
+            src='/static/images/icon-my-2.png' 
+            style="width: 28rpx; height: 28rpx; margin-right: 16rpx"
+        ></image>
+        <text>钱包</text>
+    </view>
+
+    <button class='action-item share-btn' data-index='2' open-type="share">
+        <image 
+            src='/static/images/icon-my-3.png' 
+            style="width: 28rpx; height: 28rpx; margin-right: 16rpx"
+        ></image>
+        <text>分享</text>
+    </button>
+
+    <view class='action-item' data-index='3' bindtap="toNext">
+        <image 
+            src='/static/images/icon-my-4.png' 
+            style="width: 26rpx; height: 26rpx; margin-right: 18rpx"
+        ></image>
+        <text>公告</text>
+    </view>
+
+    <view class='action-item' data-index='4' bindtap="toNext">
+        <image 
+            src='/static/images/icon-my-5.png' 
+            style="width: 22rpx; height: 26rpx; margin-right: 22rpx"
+        ></image>
+        <text>协议</text>
+    </view>
+
+    <view class='action-item' data-index='5' bindtap="toNext">
+        <image 
+            src='/static/images/icon-my-6.png' 
+            style="width: 28rpx; height: 28rpx; margin-right: 16rpx"
+        ></image>
+        <text>指南</text>
+    </view>
+
+    <view class='action-item' data-index='6' bindtap="toNext">
+        <image 
+            src='/static/images/icon-my-7.png' 
+            style="width: 28rpx; height: 28rpx; margin-right: 16rpx"
+        ></image>
+        <text>客服</text>
+    </view>
+
+    <view class='action-item' data-index='7' bindtap="toNext">
+        <image 
+            src='/static/images/icon-my-8.png' 
+            style="width: 28rpx; height: 28rpx; margin-right: 16rpx"
+        ></image>
+        <text>设置</text>
+    </view>
+</view>
+
+<c-login 
+	isHidden='{{hideLogin}}' 
+	bind:loginResult='loginResult'
+	bind:closeLogin='closeLogin'
+></c-login>
