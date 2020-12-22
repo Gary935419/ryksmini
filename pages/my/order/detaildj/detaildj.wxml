@@ -2,7 +2,7 @@
 <view class='wrapper'>
 	<view class='logo-wrapper'>
 	        <image src='/static/images/icon-about_us.png'></image>
-	</view>
+	    </view>
     <view class='info-wrapper'>
         <view class='info-item'>
             <text style="width: 40%;">支付订单编号:</text>
@@ -16,6 +16,10 @@
 		    <text style="width: 40%;">订单终点:</text>
 		    <text style="width: 60%;">{{order_result.end_location}}</text>
 		</view>
+		<view class='info-item'>
+		    <text style="width: 40%;">订单状态:</text>
+		    <text style="width: 60%;">{{order_result.status_msg}}</text>
+		</view>
         <view class='info-item'>
             <text style="width: 40%;">下单时间:</text>
             <text style="width: 60%;">{{order_result.times}}</text>
@@ -24,25 +28,17 @@
 		    <text style="width: 40%;">预约时间:</text>
 		    <text style="width: 60%;">{{order_result.appointment_time}}</text>
 		</view>
+        <view class='info-item'>
+            <text style="width: 40%;">接单时间:</text>
+            <text style="width: 60%;">{{order_result.getorder_time}}</text>
+        </view>
 		<view class='info-item'>
-		    <text style="width: 40%;">接单时间:</text>
-		    <text style="width: 60%;">{{order_result.getorder_time}}</text>
-		</view>
-		<view class='info-item'>
-		    <text style="width: 40%;">取件时间:</text>
+		    <text style="width: 40%;">上车时间:</text>
 		    <text style="width: 60%;">{{order_result.takegoods_time}}</text>
 		</view>
 		<view class='info-item'>
 		    <text style="width: 40%;">完成时间:</text>
 		    <text style="width: 60%;">{{order_result.complete_time}}</text>
-		</view>
-		<view class='info-item'>
-		    <text style="width: 40%;">物品名称:</text>
-		    <text style="width: 60%;">{{order_result.goods_name}}</text>
-		</view>
-		<view class='info-item'>
-		    <text style="width: 40%;">备注信息:</text>
-		    <text style="width: 60%;">{{order_result.goods_remarks}}</text>
 		</view>
 		<view class='info-item'>
 		    <text style="width: 40%;">订单费用:</text>
@@ -59,10 +55,6 @@
 		<view class='info-item'>
 		    <text style="width: 40%;">小费金额:</text>
 		    <text style="width: 60%;">{{order_result.tip_price}}元</text>
-		</view>
-		<view class='info-item'>
-		    <text style="width: 40%;">保价金额:</text>
-		    <text style="width: 60%;">{{order_result.protect_price}}元</text>
 		</view>
 		<view class='info-item'>
 		    <text style="width: 40%;">车牌号码:</text>

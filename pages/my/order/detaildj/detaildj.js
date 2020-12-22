@@ -73,7 +73,7 @@ Page({
             method: 'POST',
 			data: {
 			  id: that.data.id,
-			  type: 1,
+			  type: 2,
 			},
             success: res => {
                 console.log(res);

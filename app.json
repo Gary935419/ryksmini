@@ -4,6 +4,8 @@
         "pages/pay/pay",
         "pages/my/my",
         "pages/my/order/order",
+		"pages/my/order/detail/detail",
+		"pages/my/order/detaildj/detaildj",
         "pages/my/agreement/agreement",
         "pages/my/message/message",
         "pages/my/wallet/wallet",
