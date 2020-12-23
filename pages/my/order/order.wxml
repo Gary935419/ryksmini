@@ -30,7 +30,6 @@
                     </view>
                 </view>
                 <view class='status'>
-                    <text>{{item.status}}</text>
                     <image src='/static/images/icon-arrow-right-gray.png'></image>
                 </view>
             </view>

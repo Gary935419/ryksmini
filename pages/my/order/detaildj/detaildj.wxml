@@ -2,7 +2,7 @@
 <view class='wrapper'>
 	<view class='logo-wrapper'>
 	        <image src='/static/images/icon-about_us.png'></image>
-	    </view>
+	</view>
     <view class='info-wrapper'>
         <view class='info-item'>
             <text style="width: 40%;">支付订单编号:</text>
@@ -72,18 +72,25 @@
 		    <text style="width: 40%;">司机电话:</text>
 		    <text style="width: 60%;">{{order_result.account}}</text>
 		</view>
+		<view class='info-item'>
+		    <text style="width: 40%;">评价信息:</text>
+		    <text style="width: 60%;">{{order_result.evaluate}}</text>
+		</view>
 		<view class='info-item'></view>
 		<view class='info-item'></view>
     </view>
 	<view class='submit-wrapper'>
-		<view wx:if='{{order_result.status > 5}}'>
-		   <button class='submit-btn' bindtap="submitEvaluateOrder">评价订单</button>
+		<view wx:if='{{order_result.status > 5 && !order_result.evaluate}}'>
+		   
+		</view>
+		<view wx:if='{{order_result.status > 5 && !order_result.evaluate}}'>
+		   <button class='submit-btn' data-id="{{order_result.order_small_id}}" bindtap="submitEvaluateOrder">评价订单</button>
 		</view>
 		<view wx:else>
 		   
 		</view>
 		<view wx:if='{{order_result.status < 6}}'>
-		   <button class='submit-btn' style="background-color: #f44336;" bindtap="submitCancelOrder">取消订单</button>
+		   <button class='submit-btn' style="background-color: #f44336;" data-id="{{order_result.order_small_id}}" bindtap="submitCancelOrder">取消订单</button>
 		</view>
 	</view>
 </view>

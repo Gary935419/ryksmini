@@ -1,6 +1,4 @@
-<!--pages/my/order/evaluateDriver/evaluateDriver.wxml-->
 <map class="map"></map>
-
 <cover-view class="wrapper">
     <cover-view class="name-wrapper">
         <cover-view class='avatar-wrapper'>

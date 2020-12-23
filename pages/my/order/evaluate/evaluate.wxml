@@ -1,0 +1,13 @@
+<!--pages/my/wallet/applyInvoice/selectItem/writeInvoice/writeInvoice.wxml-->
+<view class='wrapper'>
+    <view class='logo-wrapper'>
+            <image src='/static/images/icon-about_us.png'></image>
+    </view>
+    <view class='title'>订单评价:</view>
+    <view class='detail-wrapper'>
+           <view class="section">
+             <textarea bindinput="bindTextAreaBlur" value="{{evaluate}}" placeholder="请录入您的评价内容~~~" />
+           </view>
+    </view>
+    <button class='sure-btn' bindtap="submitEvaluate">确认评价</button>
+</view>

@@ -49,7 +49,9 @@ Page({
      * 生命周期函数--监听页面卸载
      */
     onUnload: function () {
-
+       wx.reLaunch({
+			url: '/pages/my/order/order',
+		})
     },
 
     /**
@@ -86,5 +88,10 @@ Page({
             }
         })
     },
-
+	submitEvaluateOrder(e) {
+	    let id = e.currentTarget.dataset.id;
+		wx.navigateTo({
+			url: '/pages/my/order/evaluate/evaluate?type=2&id=' + id,
+		})
+	}
 })
