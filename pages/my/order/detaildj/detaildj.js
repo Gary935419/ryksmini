@@ -88,6 +88,44 @@ Page({
             }
         })
     },
+	submitCancelOrder() {
+		var that = this;
+		wx.showModal({
+		    title: '温馨提示',
+		    content: '确认要取消当前订单么?',
+		    success: function (res) {
+		      if (res.confirm) {
+				  wx.showLoading({
+				      title: '提交中...',
+				  })
+		        req({
+		            url: '/UserCall/cancel',
+		            method: 'POST',
+		        	data: {
+		        	  order_small_id: that.data.id,
+		        	  type: 2,
+		        	},
+		            success: res => {
+		                wx.hideLoading();
+		                wx.showModal({
+		                    title: '温馨提示',
+		                    content: '取消成功',
+		                    showCancel: false,
+		                    success: () => {
+		                        wx.navigateTo({
+		                            url: '/pages/my/order/detaildj/detaildj?id=' + that.data.id,
+		                        })
+		                    }
+		                })
+		            },
+		            fail: err => {
+		                console.log(err);
+		            }
+		        })
+		      }
+		    }
+		  })
+	},
 	submitEvaluateOrder(e) {
 	    let id = e.currentTarget.dataset.id;
 		wx.navigateTo({

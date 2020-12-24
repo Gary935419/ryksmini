@@ -16,6 +16,10 @@
 		    <text style="width: 40%;">订单终点:</text>
 		    <text style="width: 60%;">{{order_result.end_location}}</text>
 		</view>
+		<view class='info-item'>
+		    <text style="width: 40%;">订单状态:</text>
+		    <text style="width: 60%;">{{order_result.status_msg}}</text>
+		</view>
         <view class='info-item'>
             <text style="width: 40%;">下单时间:</text>
             <text style="width: 60%;">{{order_result.times}}</text>
@@ -88,10 +92,10 @@
 		<view class='info-item'></view>
     </view>
 	<view class='submit-wrapper'>
-		<view wx:if='{{order_result.status > 5 && !order_result.evaluate}}'>
+		<view wx:if='{{order_result.status == 6 && order_result.order_status == 8 && !order_result.evaluate}}'>
 		   
 		</view>
-		<view wx:if='{{order_result.status > 5 && !order_result.evaluate}}'>
+		<view wx:if='{{order_result.status == 6 && order_result.order_status == 8 && !order_result.evaluate}}'>
 		   <button class='submit-btn' data-id="{{order_result.order_small_id}}" bindtap="submitEvaluateOrder">评价订单</button>
 		</view>
 		<view wx:else>

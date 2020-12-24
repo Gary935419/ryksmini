@@ -89,9 +89,6 @@ Page({
                     couponList: res.data.result
                 })
             },
-            fail: err => {
-                console.log(err);
-            }
         })
     },
 

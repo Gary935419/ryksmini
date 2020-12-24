@@ -29,7 +29,7 @@
         </view>
     </view>
 
-    <view class='way'>
+<!--    <view class='way'>
         <view class='way-content'>
             <view class='icon-wrapper'>
                 <image src="/static/images/icon-my-wallet-refund.png"></image>
@@ -39,7 +39,7 @@
                 <image class='arrow' src='/static/images/icon-arrow-right-gray.png'></image>
             </view>
         </view>
-    </view>
+    </view> -->
 
     <view class='way' bindtap="toApplyInvoice">
         <view class='way-content'>
