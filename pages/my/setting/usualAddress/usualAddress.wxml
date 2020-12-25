@@ -1,24 +1,21 @@
 <!--pages/my/setting/usualAddress/usualAddress.wxml-->
 <view class='wrapper'>
-    <view class='address-item home'>
-        <image class='icon-home' src='/static/images/icon-address-home.png'></image>
-
-        <view class='middle-wrapper'>
-            <view style="font-size: 32rpx;">家</view>
-            <view style="font-size: 24rpx; color: #757575;">请先设置家庭地址</view>
-        </view>
-
-        <image class='edit' src="/static/images/icon-address-edit.png"></image>
-    </view>
-
-    <view class='address-item company'>
-        <image class='icon-company' src='/static/images/icon-address-home.png'></image>
-
-        <view class='middle-wrapper'>
-            <view style="font-size: 32rpx;">公司</view>
-            <view style="font-size: 24rpx; color: #757575;">请先设置公司地址</view>
-        </view>
-
-        <image class='edit' src="/static/images/icon-address-edit.png"></image>
-    </view>
+	<view wx:if="{{address_result.length != 0}}">
+		<view wx:for="{{address_result}}" data-longitude="{{item.longitude}}" data-latitude="{{item.latitude}}" data-address="{{item.address_details}}" data-addressname="{{item.addressname}}" data-item="{{item}}" wx:key="key" class='address-item home' bindtap="jumpbaxkpage">
+		    <image class='icon-home' src='/static/images/icon-address-home.png'></image>
+		    <view class='middle-wrapper'>
+		        <view style="font-size: 32rpx;">{{item.addressname}}</view>
+		        <view style="font-size: 24rpx; color: #757575;">{{item.address_details}}</view>
+		    </view>
+		    <image class='edit' src="/static/images/icon-location2.png"></image>
+		</view>
+	</view>
+	<!-- 无数据页 -->
+	<view wx:else class="lists-none text-center">
+		<view class='clearfix text-center lists-none-title padding-t30 display-flex align-items justify-content'>
+			<view class="lines"></view>
+			<view class="font40 c30d274 paddingrl34">暂无数据</view>
+			<view class="lines"></view>
+		</view>
+	</view>
 </view>

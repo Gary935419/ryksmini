@@ -150,7 +150,7 @@
 							src="/static/images/icon-arrow-right.png" 
 							mode="aspectFill"
 						></image>
-						<view class='normal-btn'>常用</view>
+						<view class='normal-btn' data-type='1' bindtap="jumpaddresspage">常用</view>
 					</view>
                     <view class='write-item' wx:if="{{currentTab == 2 && currentBtn1 != 1}}">
 						<image 
@@ -173,7 +173,7 @@
 							src="/static/images/icon-arrow-right.png" 
 							mode="aspectFill"
 						></image>
-						<view class='normal-btn'>常用</view>
+						<view class='normal-btn' data-type='1' bindtap="jumpaddresspage">常用</view>
 					</view>
 					<input 
 						class="input-address-detail"
@@ -250,7 +250,7 @@
 							src="/static/images/icon-arrow-right.png" 
 							mode="aspectFill"
 						></image>
-						<view class='normal-btn'>常用</view>
+						<view class='normal-btn' data-type='2' bindtap="jumpaddresspage">常用</view>
 					</view>
 
 					<input 

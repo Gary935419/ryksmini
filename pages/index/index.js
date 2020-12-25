@@ -320,12 +320,14 @@ Page({
                         [`writeItemArr[${index}].start_longitude`]: longitude,
                         [`writeItemArr[${index}].start_latitude`]: latitude,
                         [`writeItemArr[${index}].address`]: address,   // 详细地址
+						[`writeItemArr[${index}].addressDetail`]: address,   // 详细地址
                     })
                 } else if (index == 1) {
                     that.setData({
                         [`writeItemArr[${index}].end_longitude`]: longitude,
                         [`writeItemArr[${index}].end_latitude`]: latitude,
                         [`writeItemArr[${index}].address`]: address,   // 详细地址
+						[`writeItemArr[${index}].addressDetail`]: address,   // 详细地址
                     })
                 }
                 if(d.currentBtn1 == 1){
@@ -356,6 +358,21 @@ Page({
             },
         })
     },
+	//常用地址跳转
+	jumpaddresspage(e) {
+	    let type = e.currentTarget.dataset.type;
+	    if(type == 1){
+	    	//起点
+	    	wx.navigateTo({
+	    	    url: '/pages/my/setting/usualAddress/usualAddress?type=' + type,
+	    	})
+	    }else{
+	    	//终点
+	    	wx.navigateTo({
+	    	    url: '/pages/my/setting/usualAddress/usualAddress?type=' + type,
+	    	})
+	    }
+	},
     //第一个输入详细地址
     inputAddressDetailFirst(e) {
         that.setData({
@@ -528,10 +545,12 @@ Page({
             start_address: d.writeItemArr[0].address,
             start_longitude: d.writeItemArr[0].start_longitude,
             start_latitude: d.writeItemArr[0].start_latitude,
+			address1: d.writeItemArr[0].addressDetail,
             end_location: d.writeItemArr[1].value,
             end_address: d.writeItemArr[1].address,
             end_longitude: d.writeItemArr[1].end_longitude,
             end_latitude: d.writeItemArr[1].end_latitude,
+			address2: d.writeItemArr[1].addressDetail,
             price: d.totalPrice,
             category_type: Number(d.currentTab) + 1,
 			pickerDate: d.pickerDate,
@@ -543,8 +562,6 @@ Page({
 			distribution_km: d.totalDistance,
 			protect_price:d.protect_price,
 			tip_price:d.tip_price,
-			address1: d.writeItemArr[0].addressDetail,
-			address2: d.writeItemArr[1].addressDetail,
         }
         d.couponItemData == null ? false : data.couponId = d.couponItemData.id;
         req({
@@ -632,10 +649,12 @@ Page({
             start_address: d.writeItemArr[0].address,
             start_longitude: d.writeItemArr[0].start_longitude,
             start_latitude: d.writeItemArr[0].start_latitude,
+			address1: d.writeItemArr[0].addressDetail,
             end_location: d.writeItemArr[1].value,
             end_address: d.writeItemArr[1].address,
             end_longitude: d.writeItemArr[1].end_longitude,
             end_latitude: d.writeItemArr[1].end_latitude,
+			address2: d.writeItemArr[1].addressDetail,
 			price: d.totalPrice,
 			pickerDate: d.pickerDate,
 			pickerTime: d.pickerTime,
@@ -644,8 +663,6 @@ Page({
 			distribution_km: d.totalDistance,
 			tip_price:d.tip_price,
 			remarks: d.remarks,
-			address1: d.writeItemArr[0].addressDetail,
-			address2: d.writeItemArr[1].addressDetail,
         }
         d.couponItemData == null ? false : data.couponId = d.couponItemData.id;
         req({
