@@ -5,6 +5,7 @@ Page({
     data: {
         hideLogin: true,
         userId: wx.getStorageSync('userId'),
+		agreement_flg: wx.getStorageSync('agreement_flg'),
         currentTab: 0,//0:专车送 1:顺风送 2:代买 3:代驾
         currentBtn: 0,//0:日常代驾 1:包时代驾
 		currentBtn1: 0,//0:指定地址 1:附近地址
@@ -120,6 +121,41 @@ Page({
             }
         })
     },
+	/**
+	* 生命周期函数--监听页面显示
+	*/
+	onShow: function() {
+		let d = this.data;
+	   console.log(this.data.writeItemArr);
+	   if(d.currentBtn1 == 1){
+	   	if (d.writeItemArr[1].address != '') {
+	   		if(d.pickerDate != '请选择(必填项)' && d.pickerTime != '请选择(必填项)'){
+	   			that.calTotalPrice();
+	   		}else{
+	   			wx.showToast({
+	   			    title: '请完善时间信息',
+	   			    icon: 'none'
+	   			})
+	   			return;
+	   		}
+	   	}
+	   }else{
+	   	if (d.writeItemArr[0].address != '' && d.writeItemArr[1].address != '') {
+	   	    if(d.pickerDate != '请选择(必填项)' && d.pickerTime != '请选择(必填项)'){
+	   	    	that.calTotalPrice();
+	   	    }else{
+	   	    	wx.showToast({
+	   	    	    title: '请完善时间信息',
+	   	    	    icon: 'none'
+	   	    	})
+	   	    	return;
+	   	    }
+	   	}
+	   }
+	   if(d.couponItemData != null){
+		   that.calTotalPrice();
+	   }
+	},
     //获得用户当前坐标
     getUserLocation(){
         wx.getLocation({
@@ -164,6 +200,7 @@ Page({
         that.setData({
             currentTab: index,
 			hideLogin: true,
+			agreement_flg: wx.getStorageSync('agreement_flg'),
 			userId: wx.getStorageSync('userId'),
 			currentBtn: 0,//0:日常代驾 1:包时代驾
 			currentBtn1: 0,//0:指定地址 1:附近地址
@@ -536,6 +573,13 @@ Page({
 		    })
 		    return;
 		}
+		if (d.agreement_flg != 1) {
+		    wx.showToast({
+		        title: '请先勾选用户协议',
+		        icon: 'none'
+		    })
+		    return;
+		}
         wx.showLoading({
             title: '提交中...',
         })
@@ -638,6 +682,13 @@ Page({
             })
             return;
         }
+		if (d.agreement_flg != 1) {
+		    wx.showToast({
+		        title: '请先勾选用户协议',
+		        icon: 'none'
+		    })
+		    return;
+		}
         wx.showLoading({
             title: '提交中...',
         })
@@ -858,6 +909,7 @@ Page({
 	    that.setData({
 	        currentBtn1: index,
 			hideLogin: true,
+			agreement_flg: wx.getStorageSync('agreement_flg'),
 			userId: wx.getStorageSync('userId'),
 			currentBtn: 0,//0:日常代驾 1:包时代驾
 			currentPrice: -1,

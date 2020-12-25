@@ -23,7 +23,6 @@
 
 	<!-- 无数据页 -->
 	<view wx:else class="lists-none text-center">
-		<image class='no-list' src="../images/no_list.png"></image>
 		<view class='clearfix text-center lists-none-title padding-t30 display-flex align-items justify-content'>
 			<view class="lines"></view>
 			<view class="font40 c30d274 paddingrl34">暂无数据</view>

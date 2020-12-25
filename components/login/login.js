@@ -137,6 +137,7 @@ Component({
                                 title: '登录成功',
                                 success: () => {
                                     wx.setStorageSync('userId', res.data.result);
+									wx.setStorageSync('agreement_flg', 0);
                                     this.triggerEvent('loginResult', {result: 'success'});
                                 }
                             })

@@ -62,9 +62,28 @@ Page({
     onReachBottom: function () {
 
     },
-
-    
-
+    submitNOAgreement() {
+        wx.setStorageSync('agreement_flg', 0);
+		let pages = getCurrentPages();
+		let prevPage = pages[pages.length - 2];
+		prevPage.setData({
+			agreement_flg: 0,
+		})
+		wx.navigateBack({
+		     delta: 1,
+		})
+    },
+    submitAgreement() {
+        wx.setStorageSync('agreement_flg', 1);
+		let pages = getCurrentPages();
+		let prevPage = pages[pages.length - 2];
+		prevPage.setData({
+			agreement_flg: 1,
+		})
+		wx.navigateBack({
+		     delta: 1,
+		})
+    },
     getDeal() {
         req({
             url: '/GetBasic/get_deal',

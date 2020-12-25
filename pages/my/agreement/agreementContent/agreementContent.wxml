@@ -1,4 +1,18 @@
 <!--pages/my/agreement/agreementContent/agreementContent.wxml-->
 <view class="wrapper">
-    <text space='nbsp' decode>{{content}}</text>
+	<view class='info-wrapper'>
+		<view class='info-item'>
+		    <text space='nbsp' decode>{{content}}</text>
+		</view>
+		<view class='info-item'></view>
+		<view class='info-item'></view>
+	</view>
+	<view class='submit-wrapper'>
+		<view>
+		   <button class='submit-btn' bindtap="submitNOAgreement">不同意协议</button>
+		</view>
+		<view>
+		   <button class='submit-btn' style="background-color: #4caf50;" bindtap="submitAgreement">同意协议</button>
+		</view>
+	</view>
 </view>

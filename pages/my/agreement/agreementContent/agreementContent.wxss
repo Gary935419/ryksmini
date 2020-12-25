@@ -2,3 +2,42 @@
 .wrapper {
     padding: 20rpx;
 }
+.submit-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30rpx 45rpx;
+    background-color: #fff;
+    box-shadow: 0 -4rpx 24rpx 0 rgba(0, 0, 0, 0.1);
+    z-index: 300;
+}
+.submit-wrapper .submit-btn {
+    width: 240rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    margin: 0;
+    padding: 0 20rpx;
+    font-size: 28rpx;
+    background-color: #fdcd15;
+    border-radius: 20rpx;
+    color: #333;
+}
+.info-wrapper {
+    padding: 0 60rpx;
+}
+
+.info-wrapper .info-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 34rpx;
+    padding-bottom: 28rpx;
+    border-bottom: 1rpx solid #DCDCDC;
+    font-size: 32rpx;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: rgba(23, 22, 22, 1);
+}
