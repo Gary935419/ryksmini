@@ -16,6 +16,10 @@
         <text>司机招募</text>
         <image class='arrow' src='/static/images/icon-arrow-right-gray.png'></image>
     </view>
+	<view class='action-item' data-index='4' bindtap="toNext" wx:if="{{user_info == 1}}">
+	    <text>邀请人</text>
+	    <image class='arrow' src='/static/images/icon-arrow-right-gray.png'></image>
+	</view>
     <view class='action-item logout' data-index='5' bindtap="toNext">
         <text>退出登录</text>
     </view>

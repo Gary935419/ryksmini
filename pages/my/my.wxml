@@ -6,6 +6,8 @@
         <image wx:else src='/static/images/icon-my-avatar-placeholder.png' bindtap="handleShowLogin"></image>
         <text wx:if='{{userId}}'>{{userInfo.name}}</text>
         <text wx:else bindtap="handleShowLogin">请登录</text>
+		<text wx:if='{{userId}}' style="margin-left: 100rpx;">邀请码{{userInfo.invitation_code1}}</text>
+		<text wx:if='{{userId}}' style="margin-left: 100rpx;">邀请人{{userInfo.invitation_code1_up}}</text>
     </view>
     <image 
         style="top: {{statusBarHeight + 12}}px;" 

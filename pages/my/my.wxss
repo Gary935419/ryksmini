@@ -20,16 +20,17 @@ page {
 .top .avatar-wrapper {
     position: absolute;
     bottom: 22rpx;
-    left: 60rpx;
+    left: 20rpx;
+	right: 20rpx;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .top .avatar-wrapper > image {
-    width: 100rpx;
-    height: 100rpx;
-    margin-right: 32rpx;
+    width: 200rpx;
+    height: 120rpx;
+    margin-right: 50rpx;
 }
 
 .top .avatar-wrapper > text {

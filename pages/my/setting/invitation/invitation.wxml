@@ -1,0 +1,21 @@
+<!--pages/my/wallet/applyInvoice/selectItem/writeInvoice/writeInvoice.wxml-->
+<view class='wrapper'>
+    <view class='logo-wrapper'>
+            <image src='/static/images/icon-about_us.png'></image>
+    </view>
+	<view class='title'>邀请码录入</view>
+	<view class='detail-wrapper'>
+	    <form>
+	        <view class='detail-item'>
+	            <view class='self-label'>
+	                <text class='self-label-txt'>邀请码</text>
+	                <text class='self-label-symbol'>*</text>
+	            </view>
+	            <view class='self-right'>
+	                <input style="width: 255rpx" bindinput="bindTextAreaBlur" value="{{invitation}}" placeholder="请输入邀请码"></input>
+	            </view>
+	        </view>
+	    </form>
+	</view>
+    <button class='sure-btn' bindtap="submitInvitation">确认邀请</button>
+</view>

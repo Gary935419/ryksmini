@@ -9,7 +9,9 @@ Page({
      * 页面的初始数据
      */
     data: {
-        phone: ''
+		user_id: wx.getStorageSync('userId'),
+        phone: '',
+		user_info: [],
     },
 
     /**
@@ -66,14 +68,21 @@ Page({
     
 
     getDeal() {
+		var that = this;
+		let d = that.data;
+		let data = {
+			user_id: d.user_id,
+		}
         req({
             url: '/GetBasic/get_text_info',
             method: 'POST',
+			data,
             success: res => {
                 console.log(res);
 
                 that.setData({
-                    phone: res.data.result.user_contact_us
+                    phone: res.data.result.user_contact_us,
+					user_info: res.data.result.user_info
                 })
             },
             fail: err => {
@@ -120,7 +129,7 @@ Page({
 
             case '4':
                 wx.navigateTo({
-                    url: '/pages/my/setting/usualAddress/usualAddress',
+                    url: '/pages/my/setting/invitation/invitation',
                 })
                 break;
 
