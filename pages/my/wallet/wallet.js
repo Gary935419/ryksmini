@@ -81,7 +81,7 @@ Page({
             url: '/UserCoupon/lists',
             method: 'POST',
             data: {
-                id: that.data.userId
+                id: wx.getStorageSync('userId')
             },
             success: res => {
                 console.log(res);

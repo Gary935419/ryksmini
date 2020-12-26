@@ -102,43 +102,30 @@ Page({
 		    success: function(res) {
 		        wx.hideLoading();
 				if(res.data.result == 'SUCCESS'){
-					that.setData({
-					    moneynow: parseInt(d.money) - parseInt(d.withdrawal_price),
-					})
 					wx.showToast({
-					  title: '提现成功，2s后自动跳转',
+					  title: '提现成功，2s后自动跳转到首页',
 					  icon: 'none',
 					  duration: 3000
 					})
 					setTimeout(function() {
 					  wx.reLaunch({
-					      url: '/pages/my/wallet/wallet?money=' + that.data.moneynow,
+						  url: '/pages/index/index',
 					  })
 					}, 2000)
 				}else{
 					wx.showToast({
-					  title: '提现失败，2s后自动跳转',
+					  title: '提现失败',
 					  icon: 'none',
 					  duration: 3000
 					})
-					setTimeout(function() {
-					 wx.reLaunch({
-					    url: '/pages/my/wallet/wallet?money=' + that.data.money,
-					  })
-					}, 2000)
 				}
 		    },
 		    fail: function(res) {
 		      wx.showToast({
-		        title: '提现失败，2s后自动跳转',
+		        title: '提现失败',
 		        icon: 'none',
 		        duration: 3000
 		      })
-		      setTimeout(function() {
-		       wx.reLaunch({
-		          url: '/pages/my/wallet/wallet?money=' + that.data.money,
-		        })
-		      }, 2000)
 		    },
 		})
     }
