@@ -10,6 +10,7 @@ Page({
      */
     data: {
         wx_gongzhonghao: '',
+		user_id: wx.getStorageSync('userId'),
         email: ''
     },
 
@@ -65,9 +66,15 @@ Page({
     },
 
     getDeal() {
+		var that = this;
+		let d = that.data;
+		let data = {
+			user_id: d.user_id,
+		}
         req({
             url: '/GetBasic/get_text_info',
             method: 'POST',
+			data,
             success: res => {
                 console.log(res);
 

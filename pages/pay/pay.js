@@ -117,18 +117,33 @@ Page({
             signType,
             paySign,
             timeStamp,
-            success: resp => {
+            success: function(res) {
                 wx.hideLoading();
-        
-                console.log(resp);
-
-                wx.reLaunch({
-                    url: '/pages/my/order/order',
+                wx.showToast({
+                  title: '支付成功，2s后自动跳转',
+                  icon: 'none',
+                  duration: 3000
                 })
+                setTimeout(function() {
+                  wx.reLaunch({
+                      url: '/pages/my/order/order',
+                  })
+                }, 2000)
             },
-            fail: err => {
-                console.log(err);
-            }
+            fail: function(res) {
+            	console.log(res);
+            	console.log(888);
+              wx.showToast({
+                title: '支付失败，2s后自动跳转',
+                icon: 'none',
+                duration: 3000
+              })
+              setTimeout(function() {
+               wx.reLaunch({
+                  url: '/pages/index/index',
+                })
+              }, 2000)
+            },
         })
     },
 

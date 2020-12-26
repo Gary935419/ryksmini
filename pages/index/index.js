@@ -256,13 +256,38 @@ Page({
         if (e.type == 'end' && (e.causedBy == 'scale' || e.causedBy == 'drag')) {
             wx.chooseLocation({
                 success: resp => {
-                    that.setData({
-                        latitude: resp.latitude,
-                        longitude: resp.longitude,
-                        'markers[0].latitude': resp.latitude,
-                        'markers[0].longitude': resp.longitude,
-                        locationName: resp.name
-                    })
+					var num = Math.floor(Math.random()*10 + 1);
+					var content_new = '有'+num+'名司机正在附近服务~~~';
+					console.log(content_new);
+					that.setData({
+					    latitude: resp.latitude,
+					    longitude: resp.longitude,
+					    'markers[0].latitude': resp.latitude,
+					    'markers[0].longitude': resp.longitude,
+					    locationName: resp.name,
+						markers: [
+						    {
+						        iconPath: "/static/images/icon-map-mark.png",
+						        id: 0,
+						        latitude: resp.latitude,
+						        longitude: resp.longitude,
+						        width: 40,
+						        height: 40,
+								callout:{
+									content:content_new,
+									color:'#FFFFFF',
+									fontSize:16,
+									display:'ALWAYS',
+									textAlign:'center',
+									borderRadius:10,
+									padding:8,
+									borderWidth:3,
+									bgColor:'#ff0000',
+									borderColor:'#ff0000'
+								},
+						  }
+						],
+					})
                 }
             })
         }
@@ -510,13 +535,13 @@ Page({
         if (d.writeItemArr[0].value == '' && d.currentBtn1 != 1) {
             if (d.currentTab == 0) {
                 wx.showToast({
-                    title: '请选择送达信息',
+                    title: '请完善地址信息',
                     icon: 'none'
                 })
                 return;
             } else if (d.currentTab == 1 || d.currentTab == 2) {
                 wx.showToast({
-                    title: '请选择起点位置',
+                    title: '请完善地址信息',
                     icon: 'none'
                 })
                 return;
@@ -526,13 +551,13 @@ Page({
         if (d.writeItemArr[1].value == '') {
             if (d.currentTab == 0) {
                 wx.showToast({
-                    title: '请选择取单信息',
+                    title: '请完善地址信息',
                     icon: 'none'
                 })
                 return;
             } else if (d.currentTab == 1 || d.currentTab == 2) {
                 wx.showToast({
-                    title: '请选择终点位置',
+                    title: '请完善地址信息',
                     icon: 'none'
                 })
                 return;
@@ -642,14 +667,14 @@ Page({
         }
         if (d.writeItemArr[0].value == '') {
             wx.showToast({
-                title: '请选择起点位置',
+                title: '请完善地址信息',
                 icon: 'none'
             })
             return;
         }
         if (d.writeItemArr[1].value == '') {
             wx.showToast({
-                title: '请选择终点位置',
+                title: '请完善地址信息',
                 icon: 'none'
             })
             return;

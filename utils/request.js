@@ -1,4 +1,4 @@
-const API_HOST = "http://ryks.ychlkj.cn/index.php/home";
+const API_HOST = "https://ryks.ychlkj.cn/index.php/home";
 // const API_HOST = "http://192.168.110.82/index.php/home";
 const MD5 = '4EF82E3603825745124695977A46E8C2';
 
