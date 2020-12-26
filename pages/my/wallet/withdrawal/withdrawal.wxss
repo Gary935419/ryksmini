@@ -1,0 +1,120 @@
+/* pages/my/wallet/applyInvoice/selectItem/writeInvoice/writeInvoice.wxss */
+page {
+    background-color: #F8F8F8;
+}
+
+.wrapper {
+    padding: 0 26rpx;
+}
+.wrapper .logo-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.wrapper .logo-wrapper image {
+    width: 194rpx;
+    height: 194rpx;
+    margin: 92rpx 0 164rpx;
+}
+.title {
+    font-size: 50rpx;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: rgba(105,103,103,1);
+	margin-bottom: 20%;
+	margin-left: 15%;
+}
+
+.sel-wrapper {
+    display: flex;
+    width: 100%;
+    height: 224rpx;
+    background: rgba(255,255,255,1);
+    box-shadow: 3px 4px 5px 0px rgba(232,231,234,0.54);
+}
+
+.sel-wrapper .sel {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    height: 45rpx;
+    padding: 32rpx 0 16rpx;
+}
+
+.sel.active {
+    border-bottom: 4rpx solid #10B114;
+}
+
+radio .wx-radio-input {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.detail-wrapper {
+    background-color: #fff;
+    box-shadow:3px 4px 5px 0px rgba(232,231,234,0.54);
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 26rpx 12rpx;
+    border-bottom: 1rpx solid #DCDCDC;
+}
+
+.self-label {
+    flex: 1;
+}
+
+.self-label-txt {
+    font-size: 32rpx;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: rgba(117,117,117,1);
+}
+
+.self-label-symbol {
+    color: #D72007;
+}
+
+.self-right {
+
+}
+
+.self-radio-group {
+    display: flex;
+}
+
+.self-radio-group-label {
+    display: flex;
+}
+
+.detail-item-remark {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.detail-item-remark .remark-input {
+    height: 84rpx;
+    padding-left: 36rpx;
+    background-color: #F8F8F8;
+}
+
+.detail-item-remark .remark-look {
+    padding: 10rpx 0;
+    font-size: 24rpx;
+    text-align: right;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: rgba(117,117,117,1);
+}
+
+.sure-btn {
+    width: 100% !important;
+    margin: 92rpx 0 120rpx !important;
+    background-color: #10B114;
+    color: #fff;
+}

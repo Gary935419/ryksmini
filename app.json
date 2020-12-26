@@ -7,6 +7,7 @@
 		"pages/my/order/detaildj/detaildj",
 		"pages/my/order/evaluate/evaluate",
 		"pages/my/setting/invitation/invitation",
+		"pages/my/wallet/withdrawal/withdrawal",
         "pages/my/agreement/agreement",
         "pages/my/message/message",
         "pages/my/wallet/wallet",

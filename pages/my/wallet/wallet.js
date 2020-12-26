@@ -108,5 +108,12 @@ Page({
         wx.navigateTo({
             url: '/pages/my/wallet/myCoupon/myCoupon',
         })
-    }
+    },
+	
+	toApplyWithdrawal() {
+		that = this;
+	    wx.navigateTo({
+	        url: '/pages/my/wallet/withdrawal/withdrawal?price=' + that.data.money,
+	    })
+	}
 })
