@@ -11,7 +11,7 @@ Page({
     data: {
         statusBarHeight: 0,
         userId: wx.getStorageSync('userId'),
-        money: '0.00',
+        money: 0.00,
         couponList: []
     },
 
@@ -89,6 +89,9 @@ Page({
                     couponList: res.data.result
                 })
             },
+			fail: err => {
+			    console.log(err);
+			}
         })
     },
 

@@ -9,15 +9,18 @@ Page({
      * 页面的初始数据
      */
     data: {
-        content: ''
+        content: '',
+		type:1,//1专车送 顺风送 2代买 3代驾
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        that = this;
-
+        var that = this;
+        that.setData({
+          type: options.type,
+        });
         that.getDeal();
     },
 
@@ -63,33 +66,74 @@ Page({
 
     },
     submitNOAgreement() {
-        wx.setStorageSync('agreement_flg', 0);
-		let pages = getCurrentPages();
-		let prevPage = pages[pages.length - 2];
-		prevPage.setData({
-			agreement_flg: 0,
-		})
+		var that = this;
+		if(that.data.type === '2'){
+			//代买
+			wx.setStorageSync('agreement_flg2', 0);
+			let pages = getCurrentPages();
+			let prevPage = pages[pages.length - 2];
+			prevPage.setData({
+				agreement_flg2: 0,
+			})
+		}else if(that.data.type === '3'){
+			//代驾
+			wx.setStorageSync('agreement_flg3', 0);
+			let pages = getCurrentPages();
+			let prevPage = pages[pages.length - 2];
+			prevPage.setData({
+				agreement_flg3: 0,
+			})
+		}else{
+			//顺风 专车
+			wx.setStorageSync('agreement_flg', 0);
+			let pages = getCurrentPages();
+			let prevPage = pages[pages.length - 2];
+			prevPage.setData({
+				agreement_flg: 0,
+			})
+		}
 		wx.navigateBack({
 		     delta: 1,
 		})
     },
     submitAgreement() {
-        wx.setStorageSync('agreement_flg', 1);
-		let pages = getCurrentPages();
-		let prevPage = pages[pages.length - 2];
-		prevPage.setData({
-			agreement_flg: 1,
-		})
+		var that = this;
+		if(that.data.type === '2'){
+			//代买
+			wx.setStorageSync('agreement_flg2', 1);
+			let pages = getCurrentPages();
+			let prevPage = pages[pages.length - 2];
+			prevPage.setData({
+				agreement_flg2: 1,
+			})
+		}else if(that.data.type === '3'){
+			//代驾
+			wx.setStorageSync('agreement_flg3', 1);
+			let pages = getCurrentPages();
+			let prevPage = pages[pages.length - 2];
+			prevPage.setData({
+				agreement_flg3: 1,
+			})
+		}else{
+			//顺风 专车
+			wx.setStorageSync('agreement_flg', 1);
+			let pages = getCurrentPages();
+			let prevPage = pages[pages.length - 2];
+			prevPage.setData({
+				agreement_flg: 1,
+			})
+		}
 		wx.navigateBack({
 		     delta: 1,
 		})
     },
     getDeal() {
+		var that = this;
         req({
             url: '/GetBasic/get_deal',
             method: 'POST',
             data: {
-                type: 1
+                type: that.data.type,
             },
             success: res => {
                 console.log(res);

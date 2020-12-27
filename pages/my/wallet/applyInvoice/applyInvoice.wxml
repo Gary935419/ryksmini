@@ -11,8 +11,8 @@
 <view class='wrapper'>
     <view class='item' bindtap="toApplyInvoice">申请发票</view>
     <view class='item'>开票记录</view>
-    <view class='item' bindtap="handleShowKaipiaoModal">开票说明</view>
-    <view class='item' bindtap="handleShowJijiaModal">计价说明</view>
+   <!-- <view class='item' bindtap="handleShowKaipiaoModal">开票说明</view>
+    <view class='item' bindtap="handleShowJijiaModal">计价说明</view> -->
 </view>
 
 <c-mask maskState='{{showJijiaModal}}'></c-mask>

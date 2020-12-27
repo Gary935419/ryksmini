@@ -6,6 +6,8 @@ Page({
         hideLogin: true,
         userId: wx.getStorageSync('userId'),
 		agreement_flg: wx.getStorageSync('agreement_flg'),
+		agreement_flg2: wx.getStorageSync('agreement_flg2'),
+		agreement_flg3: wx.getStorageSync('agreement_flg3'),
         currentTab: 0,//0:专车送 1:顺风送 2:代买 3:代驾
         currentBtn: 0,//0:日常代驾 1:包时代驾
 		currentBtn1: 0,//0:指定地址 1:附近地址
@@ -13,6 +15,9 @@ Page({
         rewardPrice: '',
         hideReward: true,
 		hideProtect: true,
+		hideGoodname:true,
+		hideRemark: true,
+		hideDetail:true,
         couponItemData: null,
         totalPrice: 0,
 		totalDistance:0,
@@ -201,6 +206,8 @@ Page({
             currentTab: index,
 			hideLogin: true,
 			agreement_flg: wx.getStorageSync('agreement_flg'),
+			agreement_flg2: wx.getStorageSync('agreement_flg2'),
+			agreement_flg3: wx.getStorageSync('agreement_flg3'),
 			userId: wx.getStorageSync('userId'),
 			currentBtn: 0,//0:日常代驾 1:包时代驾
 			currentBtn1: 0,//0:指定地址 1:附近地址
@@ -208,6 +215,9 @@ Page({
 			rewardPrice: '',
 			hideReward: true,
 			hideProtect: true,
+			hideGoodname:true,
+			hideRemark: true,
+			hideDetail:true,
 			couponItemData: null,
 			totalPrice: 0,
 			totalDistance:0,
@@ -598,12 +608,30 @@ Page({
 		    })
 		    return;
 		}
-		if (d.agreement_flg != 1) {
-		    wx.showToast({
-		        title: '请先勾选用户协议',
-		        icon: 'none'
-		    })
-		    return;
+		if(d.currentTab === '2'){
+			if (d.agreement_flg2 != 1) {
+			    wx.showToast({
+			        title: '请先勾选代买用户协议',
+			        icon: 'none'
+			    })
+			    return;
+			}
+		}else if(d.currentTab === '3'){
+			if (d.agreement_flg3 != 1) {
+			    wx.showToast({
+			        title: '请先勾选代驾用户协议',
+			        icon: 'none'
+			    })
+			    return;
+			}
+		}else{
+			if (d.agreement_flg != 1) {
+			    wx.showToast({
+			        title: '请先勾选用户协议',
+			        icon: 'none'
+			    })
+			    return;
+			}
 		}
         wx.showLoading({
             title: '提交中...',
@@ -624,6 +652,8 @@ Page({
             category_type: Number(d.currentTab) + 1,
 			pickerDate: d.pickerDate,
 			pickerTime: d.pickerTime,
+			name1: d.writeItemArr[0].name,
+			tel1: d.writeItemArr[0].tel,
 			name: d.writeItemArr[1].name,
 			tel: d.writeItemArr[1].tel,
 			goods_name: d.goods_name,
@@ -707,12 +737,30 @@ Page({
             })
             return;
         }
-		if (d.agreement_flg != 1) {
-		    wx.showToast({
-		        title: '请先勾选用户协议',
-		        icon: 'none'
-		    })
-		    return;
+		if(d.currentTab === '2'){
+			if (d.agreement_flg2 != 1) {
+			    wx.showToast({
+			        title: '请先勾选代买用户协议',
+			        icon: 'none'
+			    })
+			    return;
+			}
+		}else if(d.currentTab === '3'){
+			if (d.agreement_flg3 != 1) {
+			    wx.showToast({
+			        title: '请先勾选代驾用户协议',
+			        icon: 'none'
+			    })
+			    return;
+			}
+		}else{
+			if (d.agreement_flg != 1) {
+			    wx.showToast({
+			        title: '请先勾选用户协议',
+			        icon: 'none'
+			    })
+			    return;
+			}
 		}
         wx.showLoading({
             title: '提交中...',
@@ -734,6 +782,8 @@ Page({
 			price: d.totalPrice,
 			pickerDate: d.pickerDate,
 			pickerTime: d.pickerTime,
+			name1: d.writeItemArr[0].name,
+			tel1: d.writeItemArr[0].tel,
 			name: d.writeItemArr[1].name,
 			tel: d.writeItemArr[1].tel,
 			distribution_km: d.totalDistance,
@@ -871,7 +921,11 @@ Page({
 					})
 				}
 			}
-        }
+        }else{
+			that.setData({
+				rewardPrice: ''
+			});
+		}
     },
 	//保价费 确定或者取消处理
     closeProtect(e) {
@@ -895,8 +949,61 @@ Page({
 				  duration: 2000
 				})
 			}
-        }
+        }else{
+			that.setData({
+				protect_price: ''
+			});
+		}
     },
+	//物品信息 确定或者取消处理
+	closeGoodname(e) {
+	    let type = e.currentTarget.dataset.type;
+	    let d = that.data;
+	    that.setData({
+	        hideGoodname: true
+	    })
+	    if (type == 'sure') {
+	        if (d.goods_name == '') {
+	            wx.showToast({
+	              title: '请完善物品信息!',
+	              icon: 'none',
+	              duration: 2000
+	            })
+	        }
+	    }else{
+			that.setData({
+				goods_name: ''
+			});
+		}
+	},
+	//备注信息 确定或者取消处理
+	closeRemark(e) {
+	    let type = e.currentTarget.dataset.type;
+	    let d = that.data;
+	    that.setData({
+	        hideRemark: true
+	    })
+	    if (type == 'sure') {
+	        if (d.remarks == '') {
+	            wx.showToast({
+	              title: '请完善备注信息!',
+	              icon: 'none',
+	              duration: 2000
+	            })
+	        }
+	    }else{
+			that.setData({
+				remarks: ''
+			});
+		}
+	},
+	//价格明细 确定或者取消处理
+	closeDetail(e) {
+	    let d = that.data;
+	    that.setData({
+	        hideDetail: true
+	    })
+	},
 	//弹窗类型处理
     toNext(e) {
         let name = e.currentTarget.dataset.name;
@@ -926,6 +1033,21 @@ Page({
 					hideProtect: false
 				})
 				break;
+			case '物品信息':
+				that.setData({
+					hideGoodname: false
+				})
+				break;
+			case '备注信息':
+				that.setData({
+					hideRemark: false
+				})
+				break;
+			case '价格明细':
+				that.setData({
+					hideDetail: false
+				})
+				break;
         }
     },
 	//代买模块 模式选择
@@ -935,12 +1057,17 @@ Page({
 	        currentBtn1: index,
 			hideLogin: true,
 			agreement_flg: wx.getStorageSync('agreement_flg'),
+			agreement_flg2: wx.getStorageSync('agreement_flg2'),
+			agreement_flg3: wx.getStorageSync('agreement_flg3'),
 			userId: wx.getStorageSync('userId'),
 			currentBtn: 0,//0:日常代驾 1:包时代驾
 			currentPrice: -1,
 			rewardPrice: '',
 			hideReward: true,
 			hideProtect: true,
+			hideGoodname:true,
+			hideRemark: true,
+			hideDetail: true,
 			couponItemData: null,
 			totalPrice: 0,
 			totalDistance:0,

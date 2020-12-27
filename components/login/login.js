@@ -138,6 +138,8 @@ Component({
                                 success: () => {
                                     wx.setStorageSync('userId', res.data.result);
 									wx.setStorageSync('agreement_flg', 0);
+									wx.setStorageSync('agreement_flg2', 0);
+									wx.setStorageSync('agreement_flg3', 0);
                                     this.triggerEvent('loginResult', {result: 'success'});
                                 }
                             })
