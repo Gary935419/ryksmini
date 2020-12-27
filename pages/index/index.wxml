@@ -307,7 +307,7 @@
 						></image>
 						<input 
 							disabled
-							placeholder="{{currentPrice == -1 ? (rewardPrice == '' ? '小费' : rewardPrice) : (tipsArr[currentPrice].price)}}" 
+							placeholder="{{currentPrice == -1 ? (rewardPrice == '' ? '小费(可以更快的被抢单哦)' : rewardPrice) : (tipsArr[currentPrice].price)}}" 
 							placeholder-style="font-size: 28rpx; color: #999"
 						></input>
 						<image 
@@ -325,7 +325,7 @@
 							></image>
 							<input 
 								disabled
-								placeholder="{{(goods_name == '' ? '物品信息' : goods_name)}}" 
+								placeholder="{{(goods_name == '' ? '物品信息(请填写物品信息)' : goods_name)}}" 
 								placeholder-style="font-size: 28rpx; color: #999"
 							></input>
 							<image 
@@ -344,7 +344,7 @@
 							></image>
 							<input 
 								disabled
-								placeholder="{{(protect_price == '' ? '保价费' : protect_price)}}" 
+								placeholder="{{(protect_price == '' ? '保价费(建议保价)' : protect_price)}}" 
 								placeholder-style="font-size: 28rpx; color: #999"
 							></input>
 							<image 
@@ -363,7 +363,7 @@
 							></image>
 							<input 
 								disabled
-								placeholder="{{(remarks == '' ? '备注信息' : remarks)}}" 
+								placeholder="{{(remarks == '' ? '备注信息(请填写您的需求)' : remarks)}}" 
 								placeholder-style="font-size: 28rpx; color: #999"
 							></input>
 							<image 
@@ -376,13 +376,13 @@
 					<checkbox-group style="margin-top: 30rpx;margin-bottom: 30rpx;margin-left: 20rpx;">
 					      <label class="weui-agree" for="weuiAgree">
 					           <view class="weui-agree__text" wx:if="{{currentTab == 2}}">
-			                      <navigator url="/pages/my/agreement/agreementContent/agreementContent?type={{currentTab}}"> <checkbox style="transform: scale(0.7,0.7);" checked="{{(agreement_flg2 == '' ? false : true)}}" />阅读并同意《特别声明》</navigator>
+			                      <navigator url="/pages/my/agreement/agreementContent/agreementContent?type={{currentTab}}"> <checkbox style="transform: scale(0.7,0.7);" checked="{{(agreement_flg2 == '' ? false : true)}}" />阅读并同意《代买协议》</navigator>
 					           </view>
 							   <view class="weui-agree__text" wx:elif="{{currentTab == 3}}">
-							      <navigator url="/pages/my/agreement/agreementContent/agreementContent?type={{currentTab}}"> <checkbox style="transform: scale(0.7,0.7);" checked="{{(agreement_flg3 == '' ? false : true)}}" />阅读并同意《特别声明》</navigator>
+							      <navigator url="/pages/my/agreement/agreementContent/agreementContent?type={{currentTab}}"> <checkbox style="transform: scale(0.7,0.7);" checked="{{(agreement_flg3 == '' ? false : true)}}" />阅读并同意《代驾协议》</navigator>
 							   </view>
 							   <view class="weui-agree__text" wx:else>
-							      <navigator url="/pages/my/agreement/agreementContent/agreementContent?type={{currentTab}}"> <checkbox style="transform: scale(0.7,0.7);" checked="{{(agreement_flg == '' ? false : true)}}" />阅读并同意《特别声明》</navigator>
+							      <navigator url="/pages/my/agreement/agreementContent/agreementContent?type={{currentTab}}"> <checkbox style="transform: scale(0.7,0.7);" checked="{{(agreement_flg == '' ? false : true)}}" />阅读并同意《代买协议》</navigator>
 							   </view>
 					      </label>
 					</checkbox-group>
@@ -448,7 +448,7 @@
 	<view class='mask' hidden="{{hideProtect}}" bindtap="closeProtect"></view>
 	<view 
 		class='reward-wrapper {{!hideProtect ? "reward-wrapper-show" : "reward-wrapper-hide"}}' hidden="{{hideProtect}}"
-	style="height: 500px;">
+	style="height: 400px;">
 		<view class='title'>
 			<text data-type='cancel' bindtap="closeProtect">取消</text>
 			<text style="font-weight: 500;">物品保价</text>
@@ -463,7 +463,7 @@
 			<text style="font-size: 28rpx; color: #989898">物品价值：</text>
 			<input value="{{protect_price_now}}" type="number" bindinput="priceInputhideProtect"></input>
 		</view>
-		<view style="font-size: 16px;text-align: center;margin-right: 20px;margin-left: 20px;">
+		<view style="font-size: 11px;text-align: center;margin-right: 20px;margin-left: 20px;">
 		    <view style="color: #9e9e9e;margin-top: 30rpx;">温馨提示</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">1、您交寄贵重物品的，请事先声明，否则视为价值不超过1000元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">2、贵重物品请保价。若未选择保价，则在三倍运费的限额内向您赔偿托寄物品的实际损失。</view>
@@ -483,10 +483,10 @@
 			<text style="color: #FF9046" data-type='sure' bindtap="closeGoodname">确定</text>
 		</view>
 		<view class='input-wrapper' style="margin: 50rpx 70rpx;">
-			<text style="font-size: 28rpx; color: #989898">物品信息：</text>
+			<text style="font-size: 11px; color: #989898">物品信息：</text>
 			<input value="{{goods_name}}" type="text" bindinput="inputGoodname"></input>
 		</view>
-		<view style="font-size: 16px;text-align: center;margin-right: 20px;margin-left: 20px;">
+		<view style="font-size: 11px;text-align: center;margin-right: 20px;margin-left: 20px;">
 		    <view style="color: #9e9e9e;margin-top: 30rpx;">温馨提示</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">物品不超过0.4立方米，不超过50公斤。</view>
 		</view>
@@ -503,7 +503,7 @@
 			<text style="color: #FF9046" data-type='sure' bindtap="closeRemark">确定</text>
 		</view>
 		<view class='input-wrapper' style="margin: 50rpx 70rpx;">
-			<text style="font-size: 28rpx; color: #989898">备注信息：</text>
+			<text style="font-size: 11px; color: #989898">备注信息：</text>
 			<input value="{{remarks}}" type="text" bindinput="inputRemarks"></input>
 		</view>
 	</view>
@@ -512,25 +512,21 @@
 	<view class='mask' hidden="{{hideDetail}}" bindtap="closeDetail"></view>
 	<view 
 		class='reward-wrapper {{!hideDetail ? "reward-wrapper-show" : "reward-wrapper-hide"}}' hidden="{{hideDetail}}"
-	style="height: 666px;">
+	style="height: 366px;">
 		<view class='title'>
 			<text data-type='cancel' bindtap="closeDetail">取消</text>
 			<text style="font-weight: 500;">价格明细</text>
 			<text style="color: #FF9046" data-type='sure' bindtap="closeDetail">确定</text>
 		</view>
-		<view style="font-size: 16px;text-align: center;margin-right: 20px;margin-left: 20px;" wx:if='{{currentTab === 0}}'>
-		    <view style="color: #9e9e9e;margin-top: 30rpx;font-size: 30px;">总价:{{totalPrice}}元</view>
-			<view style="color: #9e9e9e;margin-top: 30rpx;font-size: 20px;">总里程:{{totalDistance}}公里</view>
+		<view style="font-size: 11px;text-align: center;margin-right: 20px;margin-left: 20px;" wx:if='{{currentTab === 0}}'>
+		    <view style="color: #9e9e9e;margin-top: 30rpx;font-size: 16px;">总价:{{totalPrice}}元、总里程:{{totalDistance}}公里</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">5公里以内，50公斤一下，12.00元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">5-30公里每增加1km，加收2.00元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">30公里后每增加1km，加收1.50元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">22:00:00至次日07:00:00下单或此时间段内的订单，需要支付夜间费5元。</view>
-			<view style="color: #9e9e9e;margin-top: 50rpx;">温馨提示</view>
-			<view style="color: #9e9e9e;margin-top: 30rpx;">建议物品50kg以内，不得超于0.5立方米。</view>
 		</view>
-		<view style="font-size: 16px;text-align: center;margin-right: 20px;margin-left: 20px;" wx:if='{{currentTab === 1}}'>
-		    <view style="color: #9e9e9e;margin-top: 30rpx;font-size: 30px;">总价:{{totalPrice}}元</view>
-			<view style="color: #9e9e9e;margin-top: 30rpx;font-size: 20px;">总里程:{{totalDistance}}公里</view>
+		<view style="font-size: 11px;text-align: center;margin-right: 20px;margin-left: 20px;" wx:if='{{currentTab === 1}}'>
+		    <view style="color: #9e9e9e;margin-top: 30rpx;font-size: 16px;">总价:{{totalPrice}}元、总里程:{{totalDistance}}公里</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">5公里以内，50公斤一下，10.00元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">5-30公里每增加1km，加收1.00元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">30-50公里每增加1km，加收0.80元。</view>
@@ -538,25 +534,17 @@
 			<view style="color: #9e9e9e;margin-top: 30rpx;">100-200公里每增加1km，加收0.40元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">200公里后每增加1km，加收0.35元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">22:00:00至次日07:00:00下单或此时间段内的订单，需要支付夜间费5元。</view>
-			<view style="color: #9e9e9e;margin-top: 50rpx;">温馨提示</view>
-			<view style="color: #9e9e9e;margin-top: 30rpx;">建议物品50kg以内，不得超于0.5立方米。</view>
 		</view>
-		<view style="font-size: 16px;text-align: center;margin-right: 20px;margin-left: 20px;" wx:if='{{currentTab === 2}}'>
-		    <view style="color: #9e9e9e;margin-top: 30rpx;font-size: 30px;">总价:{{totalPrice}}元</view>
-			<view style="color: #9e9e9e;margin-top: 30rpx;font-size: 20px;">总里程:{{totalDistance}}公里</view>
-			<view style="color: #9e9e9e;margin-top: 50rpx;">指定地点代买</view>
-			<view style="color: #9e9e9e;margin-top: 30rpx;">3公里以内10.00元。</view>
+		<view style="font-size: 11px;text-align: center;margin-right: 20px;margin-left: 20px;" wx:if='{{currentTab === 2}}'>
+		    <view style="color: #9e9e9e;margin-top: 30rpx;font-size: 16px;">总价:{{totalPrice}}元、总里程:{{totalDistance}}公里</view>
+			<view style="color: #9e9e9e;margin-top: 30rpx;">指定地点代买:3公里以内10.00元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">3公里后每增加1km，加收2元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">22:00:00至次日07:00:00下单或此时间段内的订单，需要支付夜间费5元。</view>
-			<view style="color: #9e9e9e;margin-top: 50rpx;">附近代买</view>
-			<view style="color: #9e9e9e;margin-top: 30rpx;">3公里以内10.00元。</view>
+			<view style="color: #9e9e9e;margin-top: 30rpx;">附近代买:3公里以内10.00元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">22:00:00至次日07:00:00下单或此时间段内的订单，需要支付夜间费5元。</view>
-			<view style="color: #9e9e9e;margin-top: 50rpx;">温馨提示</view>
-			<view style="color: #9e9e9e;margin-top: 30rpx;">建议物品20kg以内。</view>
 		</view>
-		<view style="font-size: 16px;text-align: center;margin-right: 20px;margin-left: 20px;" wx:if='{{currentTab === 3}}'>
-		    <view style="color: #9e9e9e;margin-top: 30rpx;font-size: 30px;">总价:{{totalPrice}}元</view>
-			<view style="color: #9e9e9e;margin-top: 30rpx;font-size: 20px;">总里程:{{totalDistance}}公里</view>
+		<view style="font-size: 11px;text-align: center;margin-right: 20px;margin-left: 20px;" wx:if='{{currentTab === 3}}'>
+		    <view style="color: #9e9e9e;margin-top: 30rpx;font-size: 16px;">总价:{{totalPrice}}元、总里程:{{totalDistance}}公里</view>
 			<view style="color: #9e9e9e;margin-top: 50rpx;">白天代驾(07:00:00 - 22:00:00)</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">8公里以内28.00元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">8公里后每增加1km，加收3元。</view>
