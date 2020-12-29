@@ -18,9 +18,12 @@ Page({
      */
     onLoad: function (options) {
         var that = this;
-        that.setData({
-          type: options.type,
-        });
+		console.log(options.type);
+		if(options.type != undefined){
+			that.setData({
+			  type: options.type,
+			});
+		}
         that.getDeal();
     },
 

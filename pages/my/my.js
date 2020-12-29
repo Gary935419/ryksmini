@@ -126,6 +126,13 @@ Page({
     },
 
     goBack() {
+		if(wx.getStorageSync('agreement_flg') == 1){
+			let pages = getCurrentPages();
+			let prevPage = pages[pages.length - 2];
+			prevPage.setData({
+				agreement_flg: 1,
+			})
+		};
         wx.navigateBack({
             delta: 1
         })

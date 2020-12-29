@@ -382,7 +382,7 @@
 							      <navigator url="/pages/my/agreement/agreementContent/agreementContent?type={{currentTab}}"> <checkbox style="transform: scale(0.7,0.7);" checked="{{(agreement_flg3 == '' ? false : true)}}" />阅读并同意《代驾协议》</navigator>
 							   </view>
 							   <view class="weui-agree__text" wx:else>
-							      <navigator url="/pages/my/agreement/agreementContent/agreementContent?type={{currentTab}}"> <checkbox style="transform: scale(0.7,0.7);" checked="{{(agreement_flg == '' ? false : true)}}" />阅读并同意《代买协议》</navigator>
+							      <navigator url="/pages/my/agreement/agreementContent/agreementContent?type={{currentTab}}"> <checkbox style="transform: scale(0.7,0.7);" checked="{{(agreement_flg == '' ? false : true)}}" />阅读并同意《特别声明》</navigator>
 							   </view>
 					      </label>
 					</checkbox-group>
@@ -519,14 +519,14 @@
 			<text style="color: #FF9046" data-type='sure' bindtap="closeDetail">确定</text>
 		</view>
 		<view style="font-size: 11px;text-align: center;margin-right: 20px;margin-left: 20px;" wx:if='{{currentTab === 0}}'>
-		    <view style="color: #9e9e9e;margin-top: 30rpx;font-size: 16px;">总价:{{totalPrice}}元、总里程:{{totalDistance}}公里</view>
+		    <view style="color: #9e9e9e;margin-top: 30rpx;font-size: 16px;">总价:{{totalPrice}}元、总里程:{{totalDistance}}公里、小费:{{tip_price}}元、保费:{{protect_price}}元</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">5公里以内，50公斤一下，12.00元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">5-30公里每增加1km，加收2.00元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">30公里后每增加1km，加收1.50元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">22:00:00至次日07:00:00下单或此时间段内的订单，需要支付夜间费5元。</view>
 		</view>
 		<view style="font-size: 11px;text-align: center;margin-right: 20px;margin-left: 20px;" wx:if='{{currentTab === 1}}'>
-		    <view style="color: #9e9e9e;margin-top: 30rpx;font-size: 16px;">总价:{{totalPrice}}元、总里程:{{totalDistance}}公里</view>
+		    <view style="color: #9e9e9e;margin-top: 30rpx;font-size: 16px;">总价:{{totalPrice}}元、总里程:{{totalDistance}}公里、小费:{{tip_price}}元、保费:{{protect_price}}元</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">5公里以内，50公斤一下，10.00元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">5-30公里每增加1km，加收1.00元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">30-50公里每增加1km，加收0.80元。</view>
@@ -536,7 +536,7 @@
 			<view style="color: #9e9e9e;margin-top: 30rpx;">22:00:00至次日07:00:00下单或此时间段内的订单，需要支付夜间费5元。</view>
 		</view>
 		<view style="font-size: 11px;text-align: center;margin-right: 20px;margin-left: 20px;" wx:if='{{currentTab === 2}}'>
-		    <view style="color: #9e9e9e;margin-top: 30rpx;font-size: 16px;">总价:{{totalPrice}}元、总里程:{{totalDistance}}公里</view>
+		    <view style="color: #9e9e9e;margin-top: 30rpx;font-size: 16px;">总价:{{totalPrice}}元、总里程:{{totalDistance}}公里、小费:{{tip_price}}元</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">指定地点代买:3公里以内10.00元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">3公里后每增加1km，加收2元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">22:00:00至次日07:00:00下单或此时间段内的订单，需要支付夜间费5元。</view>
@@ -544,7 +544,7 @@
 			<view style="color: #9e9e9e;margin-top: 30rpx;">22:00:00至次日07:00:00下单或此时间段内的订单，需要支付夜间费5元。</view>
 		</view>
 		<view style="font-size: 11px;text-align: center;margin-right: 20px;margin-left: 20px;" wx:if='{{currentTab === 3}}'>
-		    <view style="color: #9e9e9e;margin-top: 30rpx;font-size: 16px;">总价:{{totalPrice}}元、总里程:{{totalDistance}}公里</view>
+		    <view style="color: #9e9e9e;margin-top: 30rpx;font-size: 16px;">总价:{{totalPrice}}元、总里程:{{totalDistance}}公里、小费:{{tip_price}}元</view>
 			<view style="color: #9e9e9e;margin-top: 50rpx;">白天代驾(07:00:00 - 22:00:00)</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">8公里以内28.00元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">8公里后每增加1km，加收3元。</view>
