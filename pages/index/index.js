@@ -608,16 +608,19 @@ Page({
 		    })
 		    return;
 		}
-		if(d.currentTab === '2'){
-			if (d.agreement_flg2 != 1) {
+		console.log(d.currentTab);
+		if(d.currentTab === 2){
+			console.log(d.agreement_flg2);
+			if (d.agreement_flg2 === 0) {
 			    wx.showToast({
 			        title: '请先勾选代买用户协议',
 			        icon: 'none'
 			    })
 			    return;
 			}
-		}else if(d.currentTab === '3'){
-			if (d.agreement_flg3 != 1) {
+		}else if(d.currentTab === 3){
+			console.log(d.agreement_flg3);
+			if (d.agreement_flg3 === 0) {
 			    wx.showToast({
 			        title: '请先勾选代驾用户协议',
 			        icon: 'none'
@@ -625,7 +628,8 @@ Page({
 			    return;
 			}
 		}else{
-			if (d.agreement_flg != 1) {
+			console.log(d.agreement_flg);
+			if (d.agreement_flg === 0) {
 			    wx.showToast({
 			        title: '请先勾选用户协议',
 			        icon: 'none'
@@ -737,16 +741,19 @@ Page({
             })
             return;
         }
-		if(d.currentTab === '2'){
-			if (d.agreement_flg2 != 1) {
+		console.log(d.currentTab);
+		if(d.currentTab === 2){
+			console.log(d.agreement_flg2);
+			if (d.agreement_flg2 === 0) {
 			    wx.showToast({
 			        title: '请先勾选代买用户协议',
 			        icon: 'none'
 			    })
 			    return;
 			}
-		}else if(d.currentTab === '3'){
-			if (d.agreement_flg3 != 1) {
+		}else if(d.currentTab === 3){
+			console.log(d.agreement_flg3);
+			if (d.agreement_flg3 === 0) {
 			    wx.showToast({
 			        title: '请先勾选代驾用户协议',
 			        icon: 'none'
@@ -754,7 +761,8 @@ Page({
 			    return;
 			}
 		}else{
-			if (d.agreement_flg != 1) {
+			console.log(d.agreement_flg);
+			if (d.agreement_flg === 0) {
 			    wx.showToast({
 			        title: '请先勾选用户协议',
 			        icon: 'none'
