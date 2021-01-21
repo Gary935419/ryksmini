@@ -869,6 +869,14 @@ Page({
 	//代保金额录入
     priceInputhideProtect(e) {
         let val = e.detail.value;
+		if(val > 3000){
+			wx.showToast({
+			  title: '最高保价3000元!',
+			  icon: 'none',
+			  duration: 2000
+			})
+			return;
+		}
         let reg = new RegExp(/^[0-9]*$/);
         let d = that.data;
         if (reg.exec(val)) {
