@@ -81,6 +81,10 @@
 		    <text style="width: 60%;">{{order_result.attribute}}</text>
 		</view>
 		<view class='info-item'>
+		    <text style="width: 40%;">司机姓名:</text>
+		    <text style="width: 60%;">{{order_result.name}}</text>
+		</view>
+		<view class='info-item'>
 		    <text style="width: 40%;">司机电话:</text>
 		    <text style="width: 60%;">{{order_result.account}}</text>
 		</view>

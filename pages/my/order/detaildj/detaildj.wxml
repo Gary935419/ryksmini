@@ -57,16 +57,8 @@
 		    <text style="width: 60%;">{{order_result.tip_price}}元</text>
 		</view>
 		<view class='info-item'>
-		    <text style="width: 40%;">车牌号码:</text>
-		    <text style="width: 60%;">{{order_result.car_number}}</text>
-		</view>
-		<view class='info-item'>
-		    <text style="width: 40%;">品牌名称:</text>
-		    <text style="width: 60%;">{{order_result.brand}}</text>
-		</view>
-		<view class='info-item'>
-		    <text style="width: 40%;">车辆颜色:</text>
-		    <text style="width: 60%;">{{order_result.attribute}}</text>
+		    <text style="width: 40%;">司机姓名:</text>
+		    <text style="width: 60%;">{{order_result.name}}</text>
 		</view>
 		<view class='info-item'>
 		    <text style="width: 40%;">司机电话:</text>
