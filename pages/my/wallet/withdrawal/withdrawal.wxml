@@ -12,7 +12,7 @@
 	                <text class='self-label-symbol'>*</text>
 	            </view>
 	            <view class='self-right'>
-	                <input type="number" style="width: 255rpx" bindinput="bindTextAreaBlur" placeholder="请输入提现金额"></input>
+	                <input type="digit" style="width: 255rpx" bindinput="bindTextAreaBlur" placeholder="请输入提现金额"></input>
 	            </view>
 	        </view>
 	    </form>

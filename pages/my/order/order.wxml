@@ -39,7 +39,9 @@
                     <image src='/static/images/icon-my-order-time.png'></image>
                     <text>{{item.times}}</text>
                 </view>
-
+                <view>
+                    <text style="color: red;">{{item.status_msg}}</text>
+                </view>
                 <view>
                     <text>{{item.price}}元</text>
                 </view>

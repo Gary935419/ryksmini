@@ -157,8 +157,8 @@
 					<view style="display: flex;flex-direction: row;justify-content: flex-start;">
 						<input
 							class="input-address-detail"
-							hidden="{{currentTab == 2 || currentTab == 3}}"
-							placeholder="发货人姓名"
+							hidden="{{currentTab == 3}}"
+							placeholder="{{currentTab == 2 ? '买货人姓名' : '发货人姓名)'}}"
 							placeholder-style="font-size: 28rpx; color: #999;"
 							value="{{writeItemArr[0].name}}"
 							bindinput="inputNameFirst"
@@ -166,7 +166,7 @@
 						></input>
 						<input
 							class="input-address-detail"
-							hidden="{{currentTab == 2 || currentTab == 3}}"
+							hidden="{{currentTab == 3}}"
 							placeholder="电话"
 							type="number"
 							placeholder-style="font-size: 28rpx; color: #999"
@@ -234,7 +234,7 @@
 					<view style="display: flex;flex-direction: row;justify-content: flex-start;">
 						<input
 							class="input-address-detail"
-							placeholder="收货人姓名"
+							placeholder="{{currentTab == 3 ? '车主姓名' : '收货人姓名)'}}"
 							placeholder-style="font-size: 28rpx; color: #999;"
 							value="{{writeItemArr[1].name}}"
 							bindinput="inputNameSecond"
@@ -305,11 +305,13 @@
 							src="/static/images/icon-xiaofei.png" 
 							mode="aspectFill"
 						></image>
-						<input 
-							disabled
-							placeholder="{{currentPrice == -1 ? (rewardPrice == '' ? '小费(可以更快的被抢单哦)' : rewardPrice) : (tipsArr[currentPrice].price)}}" 
-							placeholder-style="font-size: 28rpx; color: #999"
-						></input>
+					
+							<input
+								disabled
+								placeholder="{{currentPrice == -1 ? (rewardPrice == '' ?  (currentTab == 2 ? '小费(如果上楼请支付小费5~10元)' : '小费(可以更快的被抢单哦)') : rewardPrice) : (tipsArr[currentPrice].price)}}" 
+								placeholder-style="font-size: 28rpx; color: #999"
+							></input>
+						
 						<image 
 							style="width: 25rpx; height: 25rpx; margin-left: 20rpx;" 
 							src="/static/images/icon-arrow-right.png" 

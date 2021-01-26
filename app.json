@@ -5,6 +5,7 @@
         "pages/my/my",
         "pages/my/order/order",
 		"pages/my/order/detaildj/detaildj",
+		"pages/my/order/detail/detail",
 		"pages/my/order/evaluate/evaluate",
 		"pages/my/setting/invitation/invitation",
 		"pages/my/wallet/withdrawal/withdrawal",

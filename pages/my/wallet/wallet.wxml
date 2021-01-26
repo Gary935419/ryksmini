@@ -41,7 +41,7 @@
         </view>
     </view>
 
-    <view class='way' bindtap="toApplyInvoice">
+  <!--  <view class='way' bindtap="toApplyInvoice">
         <view class='way-content'>
             <view class='icon-wrapper'>
                 <image src="/static/images/icon-my-wallet-invoice.png"></image>
@@ -51,5 +51,5 @@
                 <image class='arrow' src='/static/images/icon-arrow-right-gray.png'></image>
             </view>
         </view>
-    </view>
+    </view> -->
 </view>

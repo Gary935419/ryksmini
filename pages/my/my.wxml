@@ -46,7 +46,7 @@
             src='/static/images/icon-my-4.png' 
             style="width: 26rpx; height: 26rpx; margin-right: 18rpx"
         ></image>
-        <text>公告</text>
+        <text>信息</text>
     </view>
 
     <view class='action-item' data-index='4' bindtap="toNext">

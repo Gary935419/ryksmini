@@ -34,7 +34,7 @@
         </view>
 		<view class='info-item'>
 		    <text style="width: 40%;">上车时间:</text>
-		    <text style="width: 60%;">{{order_result.takegoods_time}}</text>
+		    <text style="width: 60%;">{{order_result.takeup_time}}</text>
 		</view>
 		<view class='info-item'>
 		    <text style="width: 40%;">完成时间:</text>
