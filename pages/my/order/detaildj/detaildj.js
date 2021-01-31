@@ -131,5 +131,13 @@ Page({
 		wx.navigateTo({
 			url: '/pages/my/order/evaluate/evaluate?type=2&id=' + id,
 		})
+	},
+	submitInvoiceOrder(e) {
+	    let id = e.currentTarget.dataset.id;
+	    let type = e.currentTarget.dataset.type;
+		let price = e.currentTarget.dataset.price;
+		wx.navigateTo({
+			url: '/pages/my/order/writeInvoice/writeInvoice?price='+ price +'&type='+ type +'&id=' + id,
+		})
 	}
 })

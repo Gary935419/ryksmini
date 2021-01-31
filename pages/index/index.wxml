@@ -22,7 +22,9 @@
 		</scroll-view>
 
 		<view class="nav-all">
-			<image class='icon_img menu' src="/static/images/icon-menu.png" mode="aspectFill" />
+			<navigator target="miniProgram" app-id="wxbfe7bed8e9f36a73" path="pages/index/index">
+			     <image class='icon_img menu' src="/static/images/icon-menu.png" mode="aspectFill" />
+			</navigator>
 		</view>
 	</view>
 

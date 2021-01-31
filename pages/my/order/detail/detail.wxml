@@ -96,9 +96,9 @@
 		<view class='info-item'></view>
     </view>
 	<view class='submit-wrapper'>
-		<view wx:if='{{order_result.status == 6 && order_result.order_status == 8 && !order_result.evaluate}}'>
+		<!-- <view wx:if='{{order_result.status == 6 && order_result.order_status == 8 && !order_result.evaluate}}'>
 		   
-		</view>
+		</view> -->
 		<view wx:if='{{order_result.status == 6 && order_result.order_status == 8 && !order_result.evaluate}}'>
 		   <button class='submit-btn' data-id="{{order_result.order_small_id}}" bindtap="submitEvaluateOrder">评价订单</button>
 		</view>
@@ -108,5 +108,9 @@
 		<view wx:if='{{order_result.status < 6}}'>
 		   <button class='submit-btn' style="background-color: #f44336;" data-id="{{order_result.order_small_id}}" bindtap="submitCancelOrder">取消订单</button>
 		</view>
+		<view wx:elif="{{order_result.status == 6 && order_result.order_status == 8 && order_result.is_invoice != 1}}">
+			<button class='submit-btn' style="background-color: #f44336;" data-price="{{order_result.price}}" data-id="{{order_result.order_small_id}}" data-type="{{order_result.order_type}}" bindtap="submitInvoiceOrder">申请发票</button>
+		</view>
+		
 	</view>
 </view>

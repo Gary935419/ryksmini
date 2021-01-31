@@ -1,0 +1,137 @@
+<!--pages/my/wallet/applyInvoice/selectItem/writeInvoice/writeInvoice.wxml-->
+<view class='wrapper'>
+    <view class='title'>发票类型</view>
+
+    <view>
+        <radio-group class="sel-wrapper" bindchange='tabChange'>
+			<label class='sel'>
+			    <radio value="2" checked></radio>
+			    <view>纸质发票</view>
+			</label>
+            <label class='sel'>
+                <radio value="1"></radio>
+                <view>电子发票</view>
+            </label>
+        </radio-group>
+    </view>
+
+    <view class='title'>发票详情</view>
+
+    <view class='detail-wrapper'>
+        <form>
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>抬头类型</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <radio-group class="self-radio-group" bindchange='tabChangeType'>
+						<label class='self-radio-group-label'>
+						    <radio value="2" checked></radio>
+						    <view>个人</view>
+						</label>
+                        <label class='self-radio-group-label' style="margin-right: 80rpx;">
+                            <radio value="1"></radio>
+                            <view>单位</view>
+                        </label>
+                    </radio-group>
+                </view>
+            </view>
+
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>抬头名称</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <input style="width: 225rpx" bindinput="tabChangeName" value="{{tabChangeNameValue}}" placeholder="请输入单位名称或个人姓名"></input>
+                </view>
+            </view>
+
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>纳税人识别号</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <input style="width: 287rpx" bindinput="tabChangeNumber" value="{{tabChangeNumberValue}}" placeholder="请填写纳税人识别号"></input>
+                </view>
+            </view>
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>开票金额</text>
+					<text class='self-label-symbol'>*</text>
+                </view>
+				<view class='self-right'>
+				    <input disabled style="width: 255rpx;color: red;" placeholder="{{price}}"></input>
+				</view>
+            </view>
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>发票内容</text>
+                </view>
+            </view>
+            <view class='detail-item detail-item-remark'>
+                <input class='remark-input' bindinput="tabChangeContent" value="{{tabChangeContentValue}}" placeholder="请填写发票内容"></input>
+            </view>
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>备注信息</text>
+                </view>
+            </view>
+
+            <view class='detail-item detail-item-remark'>
+                <input class='remark-input' bindinput="tabChangeMarks" value="{{tabChangeMarksValue}}" placeholder="备注信息将在发票备注栏内展示"></input>
+                <!-- <view class='remark-look'>查看发票示例</view> -->
+            </view>
+        </form>
+    </view>
+
+    <view class='title'>收件人信息</view>
+
+    <view class='detail-wrapper'>
+        <form>
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>联系人</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <input style="width: 255rpx" bindinput="tabChangePname" value="{{tabChangePnameValue}}" placeholder="请输入联系人姓名"></input>
+                </view>
+            </view>
+
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>电话</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <input style="width: 225rpx" bindinput="tabChangePtel" value="{{tabChangePtelValue}}" placeholder="请输入联系电话"></input>
+                </view>
+            </view>
+
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>邮箱</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <input style="width: 225rpx" bindinput="tabChangePemail" value="{{tabChangePemailValue}}" placeholder="请输入邮箱地址"></input>
+                </view>
+            </view>
+
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>地址</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <input style="width: 225rpx" bindinput="tabChangePaddress" value="{{tabChangePaddressValue}}" placeholder="请输入详细地址"></input>
+                </view>
+            </view>
+        </form>
+    </view>
+
+    <button class='sure-btn' bindtap="submitOrder">确认开票</button>
+</view>

@@ -58,10 +58,44 @@ Page({
     },
 
     
-
     toNext() {
         wx.navigateTo({
-            url: '/pages/my/agreement/agreementContent/agreementContent',
+            url: '/pages/my/agreement/agreementContentDetails/agreementContentDetails?type=5',
         })
-    }
+    },
+	toNext1() {
+	    wx.navigateTo({
+	        url: '/pages/my/agreement/agreementContentDetails/agreementContentDetails?type=6',
+	    })
+	},
+	toNext2() {
+	    wx.navigateTo({
+	        url: '/pages/my/agreement/agreementContentDetails/agreementContentDetails?type=7',
+	    })
+	},
+	toNext3() {
+	    wx.navigateTo({
+	        url: '/pages/my/agreement/agreementContentDetails/agreementContentDetails?type=8',
+	    })
+	},
+	toNext4() {
+	    wx.navigateTo({
+	        url: '/pages/my/agreement/agreementContentDetails/agreementContentDetails?type=9',
+	    })
+	},
+	toNext5() {
+	    wx.navigateTo({
+	        url: '/pages/my/agreement/agreementContentDetails/agreementContentDetails?type=10',
+	    })
+	},
+	toNext6() {
+	    wx.navigateTo({
+	        url: '/pages/my/agreement/agreementContentDetails/agreementContentDetails?type=11',
+	    })
+	},
+	toNext7() {
+	    wx.navigateTo({
+	        url: '/pages/my/agreement/agreementContentDetails/agreementContentDetails?type=12',
+	    })
+	}
 })

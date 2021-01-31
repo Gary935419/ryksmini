@@ -6,6 +6,7 @@
         "pages/my/order/order",
 		"pages/my/order/detaildj/detaildj",
 		"pages/my/order/detail/detail",
+		"pages/my/order/writeInvoice/writeInvoice",
 		"pages/my/order/evaluate/evaluate",
 		"pages/my/setting/invitation/invitation",
 		"pages/my/wallet/withdrawal/withdrawal",
@@ -22,6 +23,7 @@
         "pages/my/order/evaluateDriver/evaluateDriver",
         "pages/index/coupon/coupon",
         "pages/my/agreement/agreementContent/agreementContent",
+		"pages/my/agreement/agreementContentDetails/agreementContentDetails",
         "pages/my/message/messageContent/messageContent",
         "pages/my/guide/guide",
         "pages/my/serve/issue/issue",
@@ -43,5 +45,8 @@
         }
     },
     "style": "v2",
-    "sitemapLocation": "sitemap.json"
+    "sitemapLocation": "sitemap.json",
+	"navigateToMiniProgramAppIdList": [
+	    "wxbfe7bed8e9f36a73"
+	  ]
 }

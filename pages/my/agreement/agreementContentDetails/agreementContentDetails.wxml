@@ -1,0 +1,10 @@
+<!--pages/my/agreement/agreementContent/agreementContent.wxml-->
+<view class="wrapper">
+	<view class='info-wrapper'>
+		<view class='info-item'>
+		    <text space='nbsp' decode>{{content}}</text>
+		</view>
+		<view class='info-item'></view>
+		<view class='info-item'></view>
+	</view>
+</view>
