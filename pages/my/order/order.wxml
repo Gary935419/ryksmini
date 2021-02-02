@@ -5,6 +5,7 @@
             class='nav-item {{index == navIndex ? "active" : ""}}' 
             data-index='{{index}}' 
             bindtap="changeNav"
+			wx:if="{{tabState != index || tabState != 3}}"
         >{{item.name}}</view>
     </block>
 </view>

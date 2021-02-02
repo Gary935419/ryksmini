@@ -16,6 +16,7 @@ App({
     globalData: {
         systemInfo: null,
         userInfo: null,
+		tabState:'3',
         $req
     }
 })

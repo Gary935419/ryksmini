@@ -140,6 +140,7 @@ Page({
                     success: res => {
                         if (res.confirm) {
                             wx.removeStorageSync('userId');
+							wx.removeStorageSync('tabState');
                             wx.showToast({
                                 title: '退出成功',
                                 success: () => {

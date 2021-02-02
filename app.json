@@ -2,6 +2,7 @@
     "pages": [
         "pages/index/index",
         "pages/pay/pay",
+		"pages/paynew/paynew",
         "pages/my/my",
         "pages/my/order/order",
 		"pages/my/order/detaildj/detaildj",

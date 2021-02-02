@@ -131,8 +131,12 @@ Component({
                         },
                         success: res => {
                             wx.hideLoading();
-                            // console.log(res);
-        
+                            if(res.data.msg == '登录成功啦'){
+								wx.setStorageSync('tabState', '3');
+							}else{
+								wx.setStorageSync('tabState', '6');
+							}
+							console.log(wx.getStorageSync('tabState'));
                             wx.showToast({
                                 title: '登录成功',
                                 success: () => {

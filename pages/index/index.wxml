@@ -17,6 +17,7 @@
                     data-name="{{item.name}}" 
                     data-current="{{index}}" 
                     bindtap="switchNav"
+					wx:if="{{tabState != index || tabState != 3}}"
                 >{{item.name}}</view>
 			</block>
 		</scroll-view>

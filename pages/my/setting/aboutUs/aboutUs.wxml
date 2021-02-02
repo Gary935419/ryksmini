@@ -7,11 +7,11 @@
     <view class='info-wrapper'>
         <view class='info-item'>
             <text>微信公众号</text>
-            <text>{{wx_gongzhonghao}}</text>
+            <text>如邮快送</text>
         </view>
         <view class='info-item'>
             <text>邮箱</text>
-            <text>{{email}}</text>
+            <text>ryksss@163.com</text>
         </view>
         <view class='info-item'>
             <text>网址</text>

@@ -132,6 +132,12 @@ Page({
 			url: '/pages/my/order/evaluate/evaluate?type=2&id=' + id,
 		})
 	},
+	submitPayOrder(e) {
+	    let id = e.currentTarget.dataset.id;
+		wx.navigateTo({
+			url: '/pages/paynew/paynew?orderId=' + id,
+		})
+	},
 	submitInvoiceOrder(e) {
 	    let id = e.currentTarget.dataset.id;
 	    let type = e.currentTarget.dataset.type;

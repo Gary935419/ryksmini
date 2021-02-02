@@ -32,6 +32,7 @@ Page({
         page: 1,
         pageLength: 10,
         category: 1,
+		tabState: wx.getStorageSync('tabState'),
     },
 
     /**

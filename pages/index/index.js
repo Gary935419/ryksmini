@@ -5,6 +5,7 @@ Page({
     data: {
         hideLogin: true,
         userId: wx.getStorageSync('userId'),
+		tabState: wx.getStorageSync('tabState'),
 		agreement_flg: wx.getStorageSync('agreement_flg'),
 		agreement_flg2: wx.getStorageSync('agreement_flg2'),
 		agreement_flg3: wx.getStorageSync('agreement_flg3'),
@@ -209,6 +210,7 @@ Page({
 			agreement_flg2: wx.getStorageSync('agreement_flg2'),
 			agreement_flg3: wx.getStorageSync('agreement_flg3'),
 			userId: wx.getStorageSync('userId'),
+			tabState: wx.getStorageSync('tabState'),
 			currentBtn: 0,//0:日常代驾 1:包时代驾
 			currentBtn1: 0,//0:指定地址 1:附近地址
 			currentPrice: -1,
@@ -1076,6 +1078,7 @@ Page({
 			agreement_flg2: wx.getStorageSync('agreement_flg2'),
 			agreement_flg3: wx.getStorageSync('agreement_flg3'),
 			userId: wx.getStorageSync('userId'),
+			tabState: wx.getStorageSync('tabState'),
 			currentBtn: 0,//0:日常代驾 1:包时代驾
 			currentPrice: -1,
 			rewardPrice: '',
@@ -1125,13 +1128,6 @@ Page({
         that.setData({
             currentBtn: index
         })
-		if(index == 1){
-			wx.showToast({
-			    title: '开发中，敬请等待......',
-			    icon: 'none'
-			})
-			return;
-		}
     },
     //去我的个人中心
     toMy() {

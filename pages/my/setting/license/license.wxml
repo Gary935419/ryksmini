@@ -1,4 +1,4 @@
 <!--pages/my/setting/license/license.wxml-->
 <view class='wrapper'>
-    <image class='license-img' src='{{licenseImg}}' bindtap="look"></image>
+    <image class='license-img' style="transform: rotate(270deg);" src='{{licenseImg}}' bindtap="look"></image>
 </view>
