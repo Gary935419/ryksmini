@@ -11,6 +11,7 @@
 		"pages/my/order/evaluate/evaluate",
 		"pages/my/setting/invitation/invitation",
 		"pages/my/wallet/withdrawal/withdrawal",
+		"pages/my/wallet/topup/topup",
         "pages/my/agreement/agreement",
         "pages/my/message/message",
         "pages/my/wallet/wallet",

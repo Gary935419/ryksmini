@@ -9,7 +9,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        type:1,//1专车送 顺风送 2代买 3代驾
+        type:1,//1专车送 2顺风送 3代买 4代驾
 		id:0,//订单id
 		price:0,//订单价格
 		tabChooseValue:2,//发票类型 1：电子 2：纸质
@@ -169,7 +169,7 @@ Page({
 	    let d = that.data;
 	    let data = {
 			user_id:wx.getStorageSync('userId'),
-			type:d.type,//1专车送 顺风送 2代买 3代驾
+			type:d.type,//1专车送 2顺风送 3代买 4代驾
 			id:d.id,//订单id
 			price:d.price,//订单价格
 			tabChooseValue:d.tabChooseValue,//发票类型 1：电子 2：纸质

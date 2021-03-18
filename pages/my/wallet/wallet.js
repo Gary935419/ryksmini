@@ -118,5 +118,12 @@ Page({
 	    wx.navigateTo({
 	        url: '/pages/my/wallet/withdrawal/withdrawal?price=' + that.data.money,
 	    })
+	},
+	
+	toApplyTopup() {
+		that = this;
+	    wx.navigateTo({
+	        url: '/pages/my/wallet/topup/topup?price=' + that.data.money,
+	    })
 	}
 })

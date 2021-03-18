@@ -1,0 +1,21 @@
+<!--pages/my/wallet/applyInvoice/selectItem/writeInvoice/writeInvoice.wxml-->
+<view class='wrapper'>
+    <view class='logo-wrapper'>
+            <image src='/static/images/icon-about_us.png'></image>
+    </view>
+	<view class='title'>当前账户余额:￥{{money}}</view>
+	<view class='detail-wrapper'>
+	    <form>
+	        <view class='detail-item'>
+	            <view class='self-label'>
+	                <text class='self-label-txt'>充值金额</text>
+	                <text class='self-label-symbol'>*</text>
+	            </view>
+	            <view class='self-right'>
+	                <input type="digit" style="width: 255rpx" bindinput="bindTextAreaBlur" placeholder="请输入充值金额"></input>
+	            </view>
+	        </view>
+	    </form>
+	</view>
+    <button class='sure-btn' bindtap="submitWithdrawal">确认充值</button>
+</view>
