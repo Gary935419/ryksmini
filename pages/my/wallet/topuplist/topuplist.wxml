@@ -1,0 +1,30 @@
+<view class='container positionrel'>
+	<view wx:if="{{list.length != 0}}">
+		<view wx:for="{{list}}" data-index="{{index}}" data-item="{{item}}" wx:key="key" class='padding-l24 padding-r24 margin-b20'>
+			<view class='discount-top positionrel'>
+				<image class='discount-bg' src="/static/images/image-coupon-bgc.png"></image>
+				<view class='discount-top-in'>
+					<view class='fleft discount-top-in-left text-center'>
+						<view class='font28 dis-line cef6713'>￥</view>
+						<view class='font64 dis-line cef6713'>{{item.money}}</view>
+					</view>
+					<view class='fleft padding-l20 padding-t30'>
+						<!-- <view class='font26 c000 padding-b6'>{{item.title}}</view> -->
+						<view class='font26 c000 padding-b10'>{{item.paynumber}}</view>
+						<view class='font24 c919191 padding-b20'>{{item.addtime}}</view>
+					</view>
+					<view class='fright font24 cfff voucherCenter-btn' data-item="{{item}}">{{item.title}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 无数据页 -->
+	<view wx:else class="lists-none text-center">
+		<view class='clearfix text-center lists-none-title padding-t30 display-flex align-items justify-content'>
+			<view class="lines"></view>
+			<view class="font40 c30d274 paddingrl34">暂无数据</view>
+			<view class="lines"></view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,105 @@
+/* pages/my/wallet/wallet.wxss */
+page {
+    background-color: #F8F8F8;
+}
+
+.top {
+    width: 100%;
+    height: 512rpx;
+    background: linear-gradient(135deg, rgba(255, 109, 11, 1), rgba(253, 168, 111, 1));
+}
+
+.top > .title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.top>image {
+    position: absolute;
+    left: 30rpx;
+    width: 35rpx;
+    height: 35rpx;
+}
+
+.main-wrapper {
+    /* height: 476rpx; */
+    text-align: center;
+    margin: -160rpx 16rpx 0;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 10rpx;
+}
+
+.main-wrapper .price-wrapper {
+    padding: 120rpx 0 30rpx;
+    border-bottom: 1rpx solid #F2EDED;
+    box-sizing: border-box;
+}
+
+.main-wrapper .price-wrapper .top-part {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 66rpx;
+}
+
+.main-wrapper .price-wrapper .top-part>.title {
+    font-size: 32rpx;
+    color: rgba(12, 2, 2, 1);
+}
+
+.main-wrapper .price-wrapper .top-part > image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: 10rpx;
+}
+
+.main-wrapper .price-wrapper .down-part {
+    font-size: 64rpx;
+    color: rgba(255, 103, 0, 1);
+}
+
+.main-wrapper .way {
+    padding: 48rpx 14rpx 54rpx;
+    border-bottom: 1rpx solid #F2EDED;
+    box-sizing: border-box;
+}
+
+.main-wrapper .way:nth-last-child(1) {
+    border-bottom: none;
+}
+
+.main-wrapper .way .way-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-wrapper .way .way-content .icon-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.main-wrapper .way .way-content .icon-wrapper > image {
+    width: 34rpx;
+    height: 28rpx;
+    margin-right: 14rpx;
+}
+
+/* .main-wrapper .way .way-content .num-wrapper {
+
+} */
+
+.main-wrapper .way .way-content .num-wrapper .num {
+    margin-right: 16rpx;
+    font-size: 26rpx;
+    font-weight:400;
+    color: rgba(171, 171, 171, 1);
+}
+
+.main-wrapper .way .way-content .num-wrapper .arrow {
+    width: 20rpx;
+    height: 20rpx;
+}

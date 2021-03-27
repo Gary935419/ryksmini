@@ -184,6 +184,11 @@ Page({
                         url: '/pages/my/setting/setting',
                     })
                     break;
+				case '8':
+					wx.navigateTo({
+						url: '/pages/my/merchants/merchants',
+					})
+					break;
             }
         } else {
             that.setData({

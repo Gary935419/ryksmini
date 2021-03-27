@@ -1,0 +1,132 @@
+<!--pages/my/wallet/applyInvoice/selectItem/writeInvoice/writeInvoice.wxml-->
+<view class='wrapper'>
+
+    <view class='title'>店铺信息</view>
+
+    <view class='detail-wrapper'>
+        <form>
+
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>店铺名称</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <input style="width: 225rpx" bindinput="tabChangeName" value="{{tabChangeNameValue}}"></input>
+                </view>
+            </view>
+
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>经营类型</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <input style="width: 225rpx" bindinput="tabChangeNumber" value="{{tabChangeNumberValue}}"></input>
+                </view>
+            </view>
+      
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>店铺地址</text>
+					<text class='self-label-symbol'>*</text>
+                </view>
+            </view>
+            <view class='detail-item detail-item-remark'>
+                <input class='remark-input' bindinput="tabChangeContent" value="{{tabChangeContentValue}}" placeholder="请填写店铺详细地址"></input>
+            </view>
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'></text>
+                </view>
+            </view>
+			<view class="picture_list">
+			  <view class='wan_text'>资质图片</view>
+			  <text class='self-label-symbol'>*</text>
+			  <view wx:for="{{upload_picture_list}}" class="picture_item" wx:key="key">
+			    <image wx:if="{{item.upload_percent < 100}}" src="{{item.path}}" mode="aspectFill"></image>
+			    <image wx:if="{{item.upload_percent == 100}}" src="{{item.path}}" bindtap="previewImg" mode="aspectFill"></image>
+			    <view class="upload_progress" wx:if="{{item.upload_percent < 100}}" data-index="{{index}}" bindtap="previewImg">{{item.upload_percent}}%</view>
+			    <text class='del' bindtap='deleteImg' data-src='{{image}}' style='display:{{isDel}}' data-index="{{index}}">×</text>
+			  </view>
+			  <view class='picture_item'>
+			    <view class="add-image" bindtap='uploadpic'>
+			      <text>+</text>
+			    </view>
+			  </view>
+			</view>
+        </form>
+    </view>
+
+    <view class='title'>联系人与负责人信息</view>
+
+    <view class='detail-wrapper'>
+        <form>
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>联系人姓名</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <input style="width: 225rpx" bindinput="tabChangePname" value="{{tabChangePnameValue}}"></input>
+                </view>
+            </view>
+
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>联系人电话</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <input style="width: 225rpx" bindinput="tabChangePtel" value="{{tabChangePtelValue}}"></input>
+                </view>
+            </view>
+
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>负责人姓名</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <input style="width: 225rpx" bindinput="tabChangePname1" value="{{tabChangePname1Value}}"></input>
+                </view>
+            </view>
+
+            <view class='detail-item'>
+                <view class='self-label'>
+                    <text class='self-label-txt'>负责人电话</text>
+                    <text class='self-label-symbol'>*</text>
+                </view>
+                <view class='self-right'>
+                    <input style="width: 225rpx" bindinput="tabChangePtel1" value="{{tabChangePtel1Value}}"></input>
+                </view>
+            </view>
+			<view class='detail-item'>
+			    <view class='self-label'>
+			        <text class='self-label-txt'>负责人身份证号</text>
+			        <text class='self-label-symbol'>*</text>
+			    </view>
+			    <view class='self-right'>
+			        <input style="width: 225rpx" bindinput="tabChangePcard" value="{{tabChangePcardValue}}"></input>
+			    </view>
+			</view>
+        </form>
+    </view>
+    
+	<view class='title'>其他信息</view>
+	
+	<view class='detail-wrapper'>
+	    <form>
+	        <view class='detail-item'>
+	            <view class='self-label'>
+	                <text class='self-label-txt'>邀请码（选填）</text>
+	            </view>
+	            <view class='self-right'>
+	                <input style="width: 225rpx" bindinput="tabChangeNumber1" value="{{tabChangeNumber1Value}}"></input>
+	            </view>
+	        </view>
+	    </form>
+	</view>
+	
+    <button class='sure-btn' bindtap="submitOrder">确认申请</button>
+</view>

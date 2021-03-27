@@ -11,8 +11,6 @@ Page({
     data: {
         statusBarHeight: 0,
         userId: wx.getStorageSync('userId'),
-        money: 0.00,
-        couponList: []
     },
 
     /**
@@ -25,13 +23,6 @@ Page({
             statusBarHeight: app.globalData.systemInfo.statusBarHeight
         })
 
-        if (options.money) {
-            that.setData({
-                money: options.money
-            })
-        }
-
-        that.getCoupon();
     },
 
     /**
@@ -76,60 +67,22 @@ Page({
 
     },
 
-    getCoupon() {
-        req({
-            url: '/UserCoupon/lists',
-            method: 'POST',
-            data: {
-                id: wx.getStorageSync('userId')
-            },
-            success: res => {
-                console.log(res);
-                that.setData({
-                    couponList: res.data.result
-                })
-            },
-			fail: err => {
-			    console.log(err);
-			}
-        })
-    },
-
     goBack() {
         wx.navigateBack({
             delta: 1
         })
     },
 
-    toApplyInvoice() {
-        wx.navigateTo({
-            url: '/pages/my/wallet/applyInvoice/applyInvoice',
-        })
-    },
-
-    toCoupon() {
-        wx.navigateTo({
-            url: '/pages/my/wallet/myCoupon/myCoupon',
-        })
-    },
-	
-	toApplyWithdrawal() {
-		that = this;
-	    wx.navigateTo({
-	        url: '/pages/my/wallet/withdrawal/withdrawal?price=' + that.data.money,
-	    })
-	},
-	
 	toApplyTopup() {
 		that = this;
 	    wx.navigateTo({
-	        url: '/pages/my/wallet/topup/topup?price=' + that.data.money,
+	        url: '/pages/my/merchants/writeInvoice/writeInvoice',
 	    })
 	},
 	toApplyTopuplist() {
 		that = this;
 	    wx.navigateTo({
-	        url: '/pages/my/wallet/topuplist/topuplist',
+	        url: '/pages/my/merchants/merchantslist/merchantslist',
 	    })
 	}
 })

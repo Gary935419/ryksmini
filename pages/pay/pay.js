@@ -13,6 +13,9 @@ Page({
         userId: wx.getStorageSync('userId'),
         orderId: '',   // 22
         orderInfo: null,
+		pay_two:false,
+		pay_one:true,
+		pay_type: 2,
     },
 
     /**
@@ -81,6 +84,24 @@ Page({
 
     },
 
+    pay_one() {
+		that = this;
+        that.setData({
+            pay_type: 2,
+			pay_one: true,
+			pay_two: false,
+        })
+    },
+	
+	pay_two() {
+		that = this;
+	    that.setData({
+	        pay_type: 3,
+	        pay_one: false,
+	        pay_two: true,
+	    })
+	},
+	
     getOrderInfo() {
         req({
             url: '/UserCall/traffic_order_pay',
@@ -105,46 +126,74 @@ Page({
 
     pay() {
         let d = that.data;
-        let { nonceStr, _package, paySign, timeStamp, signType } = d.orderInfo.app_request;
-
-        wx.showLoading({
-            title: 'loading...',
-        })
-
-        wx.requestPayment({
-            nonceStr,
-            package: _package,
-            signType,
-            paySign,
-            timeStamp,
-            success: function(res) {
-                wx.hideLoading();
-                wx.showToast({
-                  title: '支付成功，2s后自动跳转',
-                  icon: 'none',
-                  duration: 3000
-                })
-                setTimeout(function() {
-                  wx.reLaunch({
-                      url: '/pages/my/order/order',
-                  })
-                }, 2000)
-            },
-            fail: function(res) {
-            	console.log(res);
-            	console.log(888);
-              wx.showToast({
-                title: '支付失败，2s后自动跳转',
-                icon: 'none',
-                duration: 3000
-              })
-              setTimeout(function() {
-               wx.reLaunch({
-                  url: '/pages/index/index',
-                })
-              }, 2000)
-            },
-        })
+		if(d.pay_one == 1){
+			let { nonceStr, _package, paySign, timeStamp, signType } = d.orderInfo.app_request;
+			
+			wx.showLoading({
+			    title: 'loading...',
+			})
+			
+			wx.requestPayment({
+			    nonceStr,
+			    package: _package,
+			    signType,
+			    paySign,
+			    timeStamp,
+			    success: function(res) {
+			        wx.hideLoading();
+			        wx.showToast({
+			          title: '支付成功，2s后自动跳转',
+			          icon: 'none',
+			          duration: 3000
+			        })
+			        setTimeout(function() {
+			          wx.reLaunch({
+			              url: '/pages/my/order/order',
+			          })
+			        }, 2000)
+			    },
+			    fail: function(res) {
+			    	console.log(res);
+			    	console.log(888);
+			      wx.showToast({
+			        title: '支付失败，2s后自动跳转',
+			        icon: 'none',
+			        duration: 3000
+			      })
+			      setTimeout(function() {
+			       wx.reLaunch({
+			          url: '/pages/index/index',
+			        })
+			      }, 2000)
+			    },
+			})
+		}else{
+			let data = {
+			    order_id: that.data.orderId,
+				type:1
+			}
+			req({
+			    url: '/UserCall/balance_payment',
+			    method: 'POST',
+			    data,
+			    success: res => {
+					wx.hideLoading();
+					wx.showToast({
+					  title: res.data.msg,
+					  icon: 'none',
+					  duration: 3000
+					})
+					setTimeout(function() {
+					  wx.reLaunch({
+					      url: '/pages/my/order/order',
+					  })
+					}, 2000)
+			    },
+			    fail: err => {
+			        console.log(err);
+			    }
+			})
+		}
     },
 
     toBack() {
