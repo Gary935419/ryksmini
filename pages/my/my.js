@@ -140,7 +140,7 @@ Page({
 
     toNext(e) {
         let index = e.currentTarget.dataset.index;
-
+		
         if (that.data.userId) {
             switch (index) {
                 case '0':
@@ -186,7 +186,7 @@ Page({
                     break;
 				case '8':
 					wx.navigateTo({
-						url: '/pages/my/merchants/merchants',
+						url: '/pages/my/merchants/merchants?is_merchants='+that.data.userInfo.is_merchants,
 					})
 					break;
             }

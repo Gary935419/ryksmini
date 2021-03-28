@@ -9,6 +9,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+		is_merchants:0,
         statusBarHeight: 0,
         userId: wx.getStorageSync('userId'),
     },
@@ -18,11 +19,11 @@ Page({
      */
     onLoad: function (options) {
         that = this;
-
-        that.setData({
-            statusBarHeight: app.globalData.systemInfo.statusBarHeight
-        })
-
+		console.log(options.is_merchants);
+		that.setData({
+			is_merchants: options.is_merchants,
+			statusBarHeight: app.globalData.systemInfo.statusBarHeight
+		})
     },
 
     /**

@@ -12,7 +12,7 @@
 	    </view>
 	</view>
 	
-   <view class='way' bindtap="toApplyTopup">
+   <view class='way' bindtap="toApplyTopup" wx:if="{{is_merchants != '商户版'}}">
         <view class='way-content'>
             <view class='icon-wrapper'>
                 <image src="/static/images/icon-my-wallet-invoice.png"></image>
