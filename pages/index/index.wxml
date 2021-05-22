@@ -17,7 +17,6 @@
                     data-name="{{item.name}}" 
                     data-current="{{index}}" 
                     bindtap="switchNav"
-					wx:if="{{tabState != index || tabState != 3}}"
                 >{{item.name}}</view>
 			</block>
 		</scroll-view>
@@ -493,7 +492,7 @@
 		</view>
 		<view style="font-size: 11px;text-align: center;margin-right: 20px;margin-left: 20px;">
 		    <view style="color: #9e9e9e;margin-top: 30rpx;">温馨提示</view>
-			<view style="color: #9e9e9e;margin-top: 30rpx;">物品不超过0.4立方米，不超过50公斤。</view>
+			<view style="color: #9e9e9e;margin-top: 30rpx;">物品不超过0.4立方米，不超过20公斤。</view>
 		</view>
 	</view>
 	
@@ -525,20 +524,20 @@
 		</view>
 		<view style="font-size: 11px;text-align: center;margin-right: 20px;margin-left: 20px;" wx:if='{{currentTab === 0}}'>
 		    <view style="color: #9e9e9e;margin-top: 30rpx;font-size: 16px;">总价:{{totalPrice}}元、总里程:{{totalDistance}}公里、小费:{{tip_price}}元、保费:{{protect_price}}元</view>
-			<view style="color: #9e9e9e;margin-top: 30rpx;">5公里以内，50公斤一下，12.00元。</view>
+			<view style="color: #9e9e9e;margin-top: 30rpx;">5公里以内，20公斤一下，12.00元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">5-30公里每增加1km，加收2.00元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">30公里后每增加1km，加收1.50元。</view>
-			<view style="color: #9e9e9e;margin-top: 30rpx;">22:00:00至次日07:00:00下单或此时间段内的订单，需要支付夜间费5元。</view>
+			<view style="color: #9e9e9e;margin-top: 30rpx;">22:00:00至次日05:00:00下单或此时间段内的订单，需要支付夜间费5元。</view>
 		</view>
 		<view style="font-size: 11px;text-align: center;margin-right: 20px;margin-left: 20px;" wx:if='{{currentTab === 1}}'>
 		    <view style="color: #9e9e9e;margin-top: 30rpx;font-size: 16px;">总价:{{totalPrice}}元、总里程:{{totalDistance}}公里、小费:{{tip_price}}元、保费:{{protect_price}}元</view>
-			<view style="color: #9e9e9e;margin-top: 30rpx;">5公里以内，50公斤一下，10.00元。</view>
+			<view style="color: #9e9e9e;margin-top: 30rpx;">5公里以内，20公斤一下，10.00元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">5-30公里每增加1km，加收1.00元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">30-50公里每增加1km，加收0.80元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">50-100公里每增加1km，加收0.60元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">100-200公里每增加1km，加收0.40元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">200公里后每增加1km，加收0.35元。</view>
-			<view style="color: #9e9e9e;margin-top: 30rpx;">22:00:00至次日07:00:00下单或此时间段内的订单，需要支付夜间费5元。</view>
+			<view style="color: #9e9e9e;margin-top: 30rpx;">22:00:00至次日05:00:00下单或此时间段内的订单，需要支付夜间费5元。</view>
 		</view>
 		<view style="font-size: 11px;text-align: center;margin-right: 20px;margin-left: 20px;" wx:if='{{currentTab === 2}}'>
 		    <view style="color: #9e9e9e;margin-top: 30rpx;font-size: 16px;">总价:{{totalPrice}}元、总里程:{{totalDistance}}公里、小费:{{tip_price}}元</view>
@@ -546,14 +545,14 @@
 			<view style="color: #9e9e9e;margin-top: 30rpx;">3公里后每增加1km，加收2元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">22:00:00至次日07:00:00下单或此时间段内的订单，需要支付夜间费5元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">附近代买:3公里以内10.00元。</view>
-			<view style="color: #9e9e9e;margin-top: 30rpx;">22:00:00至次日07:00:00下单或此时间段内的订单，需要支付夜间费5元。</view>
+			<view style="color: #9e9e9e;margin-top: 30rpx;">22:00:00至次日05:00:00下单或此时间段内的订单，需要支付夜间费5元。</view>
 		</view>
 		<view style="font-size: 11px;text-align: center;margin-right: 20px;margin-left: 20px;" wx:if='{{currentTab === 3}}'>
 		    <view style="color: #9e9e9e;margin-top: 30rpx;font-size: 16px;">总价:{{totalPrice}}元、总里程:{{totalDistance}}公里、小费:{{tip_price}}元</view>
-			<view style="color: #9e9e9e;margin-top: 50rpx;">白天代驾(07:00:00 - 22:00:00)</view>
+			<view style="color: #9e9e9e;margin-top: 50rpx;">白天代驾(05:00:00 - 22:00:00)</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">8公里以内28.00元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">8公里后每增加1km，加收3元。</view>
-			<view style="color: #9e9e9e;margin-top: 50rpx;">夜间代驾(22:00:00 - 07:00:00)</view>
+			<view style="color: #9e9e9e;margin-top: 50rpx;">夜间代驾(22:00:00 - 05:00:00)</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">8公里以内38.00元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">8公里后每增加1km，加收4元。</view>
 		</view>
