@@ -40,6 +40,7 @@ Page({
         longitude: 116.402544,
         mapCtx: null,
         locationName: '',
+		content1: '',
         markers: [
             {
                 iconPath: "/static/images/icon-map-mark.png",
@@ -126,6 +127,7 @@ Page({
                 }
             }
         })
+		that.getContentInfo();
     },
 	/**
 	* 生命周期函数--监听页面显示
@@ -161,6 +163,23 @@ Page({
 	   if(d.couponItemData != null){
 		   that.calTotalPrice();
 	   }
+	},
+	getContentInfo() {
+	    req({
+	        url: '/User/Contentinfo',
+	        method: 'POST',
+	        data: {},
+	        success: res => {
+	            wx.hideLoading();
+	            console.log(res);
+	            that.setData({
+	                content1: res.data.result
+	            })
+	        },
+	        fail: err => {
+	            console.log(err);
+	        }
+	    })
 	},
     //获得用户当前坐标
     getUserLocation(){

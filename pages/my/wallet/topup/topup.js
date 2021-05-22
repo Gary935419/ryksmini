@@ -116,7 +116,7 @@ Page({
 				        })
 				        setTimeout(function() {
 				          wx.reLaunch({
-				              url: '/pages/my/my',
+				              url: '/pages/index/index',
 				          })
 				        }, 2000)
 				    },

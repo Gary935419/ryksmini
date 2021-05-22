@@ -41,7 +41,7 @@
 
 	<view class='notice-wrapper'>
 		<text class='title'>公告：</text>
-		<text class="notice-inner">这是一条公告，这是一条公告，这是一条公告，这是一条公告，这是一条公告，这是一条公告，这是一条公告，这是一条公告，</text>
+		<text class="notice-inner">{{content1}}</text>
 	</view>
 
 	<view class='action-wrapper'>
