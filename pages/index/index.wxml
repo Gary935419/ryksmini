@@ -188,10 +188,10 @@
 						<input 
 							hidden="{{currentTab != 0}}"
 							disabled
-							placeholder="请选择收获地址(必填项)" 
+							placeholder="请选择收货地址(必填项)" 
 							placeholder-style="font-size: 28rpx; color: #999"
 							style=""
-							data-type='请选择收获地址(必填项)'
+							data-type='请选择收货地址(必填项)'
 							data-index='1'
 							value="{{writeItemArr[1].value}}"
 							bindtap="onInputTap"
@@ -199,10 +199,10 @@
 						<input 
 							hidden="{{currentTab == 0 || currentTab == 3}}"
 							disabled
-							placeholder="请选择收获地址(必填项)" 
+							placeholder="请选择收货地址(必填项)" 
 							placeholder-style="font-size: 28rpx; color: #999"
 							style=""
-							data-type='请选择收获地址(必填项)'
+							data-type='请选择收货地址(必填项)'
 							data-index='1'
 							value="{{writeItemArr[1].value}}"
 							bindtap="onInputTap"
