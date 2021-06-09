@@ -59,7 +59,7 @@ page {
 }
 
 .main-wrapper .way {
-    padding: 80rpx 32rpx 84rpx;
+    padding: 30rpx 32rpx 84rpx;
 }
 
 .main-wrapper .way > .title {

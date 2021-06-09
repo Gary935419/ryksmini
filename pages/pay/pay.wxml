@@ -25,6 +25,9 @@
 			<block wx:if="{{pay_one}}">
               <image class='mark' src='/static/images/icon-choose-pay-methods.png'></image>
 			</block>
+			<block wx:else>
+			  <image class='mark' src='/static/images/icon-choose-pay-methodsnew.png'></image>
+			</block>
         </view>
 		<view class='way-content' style="margin-top: 16px;" bindtap="pay_two">
 		    <view class='icon-wrapper'>
@@ -33,6 +36,9 @@
 		    </view>
 			<block wx:if="{{pay_two}}">
 		      <image class='mark' src='/static/images/icon-choose-pay-methods.png'></image>
+			</block>
+			<block wx:else>
+			  <image class='mark' src='/static/images/icon-choose-pay-methodsnew.png'></image>
 			</block>
 		</view>
     </view>
