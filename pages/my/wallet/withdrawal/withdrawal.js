@@ -114,7 +114,7 @@ Page({
 					}, 2000)
 				}else{
 					wx.showToast({
-					  title: '提现失败',
+					  title: '提现失败,您的商户余额不足！',
 					  icon: 'none',
 					  duration: 3000
 					})
@@ -122,7 +122,7 @@ Page({
 		    },
 		    fail: function(res) {
 		      wx.showToast({
-		        title: '提现失败',
+		        title: '提现失败,您的商户余额不足！',
 		        icon: 'none',
 		        duration: 3000
 		      })
