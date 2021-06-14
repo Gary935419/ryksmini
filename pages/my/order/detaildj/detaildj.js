@@ -92,7 +92,7 @@ Page({
 		var that = this;
 		wx.showModal({
 		    title: '温馨提示',
-		    content: '确认要取消当前订单么?',
+		    content: '订单生效后,5分钟取消费5元,是否取消订单?',
 		    success: function (res) {
 		      if (res.confirm) {
 				  wx.showLoading({
