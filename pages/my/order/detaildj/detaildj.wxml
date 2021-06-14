@@ -65,6 +65,10 @@
 		    <text style="width: 60%;">{{order_result.evaluate}}</text>
 		</view>
 		<view class='info-item'>
+		    <text style="width: 40%;">评价星数:</text>
+		    <text style="width: 60%;">{{order_result.star}}星</text>
+		</view>
+		<view class='info-item'>
 		    <text style="width: 40%;">延时费:</text>
 		    <text style="width: 60%;">{{order_result.delay_price}}</text>
 		</view>

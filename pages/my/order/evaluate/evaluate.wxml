@@ -3,6 +3,20 @@
     <view class='logo-wrapper'>
             <image src='/static/images/icon-about_us.png'></image>
     </view>
+	
+	<view class='title'>评价星数:{{one_2}}星</view>
+	<view class='detail-wrapper'>
+	       <view class="section">
+	         <block wx:for="{{one_2}}" wx:key="index">
+	         <image style="height: 60rpx;width: 60rpx;display: inline-block" catchtap='in_xin' id='{{index+1}}' data-in='use_sc2' src='/static/images/icon-choose-pay-methods.png'></image>
+	         </block>
+	         <block wx:for="{{two_2}}" wx:key="index">
+	         <image style="height: 60rpx;width: 60rpx;display: inline-block" catchtap='in_xin' id='{{index+1}}' data-in='use_sc' src='/static/images/icon-choose-pay-methodsnew.png'></image>
+	         </block>
+	       </view>
+	</view>
+	
+	
     <view class='title'>订单评价:</view>
     <view class='detail-wrapper'>
            <view class="section">

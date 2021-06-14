@@ -11,7 +11,12 @@ Page({
     data: {
         id: '', //订单id
 		type:'', //1非代驾 2代驾
-		evaluate:'' //评价内容
+		evaluate:'' ,//评价内容
+		num: 4,//后端给的分数,显示相应的星星
+		one_1: '',
+		two_1: '',
+		one_2: 0,
+		two_2: 5
     },
 
     /**
@@ -25,6 +30,20 @@ Page({
        });
     },
 
+    //情况二:用户给评分
+      in_xin:function(e){
+        var in_xin = e.currentTarget.dataset.in;
+        var one_2;
+        if (in_xin === 'use_sc2'){
+          one_2 = Number(e.currentTarget.id);
+        } else {
+          one_2 = Number(e.currentTarget.id) + this.data.one_2;
+        }
+        this.setData({
+          one_2: one_2,
+          two_2: 5 - one_2
+        })
+      },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -81,6 +100,7 @@ Page({
 			order_small_id: d.id,
 			type: d.type,
 			evaluate: d.evaluate,
+			star: d.one_2,
 		}
 		console.log(data);
 		wx.showLoading({

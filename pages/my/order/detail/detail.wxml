@@ -92,6 +92,10 @@
 		    <text style="width: 40%;">评价信息:</text>
 		    <text style="width: 60%;">{{order_result.evaluate}}</text>
 		</view>
+		<view class='info-item'>
+		    <text style="width: 40%;">评价星数:</text>
+		    <text style="width: 60%;">{{order_result.star}}星</text>
+		</view>
 		<view class='info-item'></view>
 		<view class='info-item'></view>
     </view>
