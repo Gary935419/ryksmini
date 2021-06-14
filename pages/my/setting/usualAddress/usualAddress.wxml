@@ -1,7 +1,10 @@
 <!--pages/my/setting/usualAddress/usualAddress.wxml-->
 <view class='wrapper'>
 	<view wx:if="{{address_result.length != 0}}">
-		<view wx:for="{{address_result}}" data-longitude="{{item.longitude}}" data-latitude="{{item.latitude}}" data-address="{{item.address_details}}" data-addressname="{{item.addressname}}" data-item="{{item}}" wx:key="key" class='address-item home' bindtap="jumpbaxkpage">
+		<view wx:for="{{address_result}}" data-id="{{item.id}}" data-longitude="{{item.longitude}}" data-latitude="{{item.latitude}}" data-address="{{item.address_details}}" data-addressname="{{item.addressname}}" data-item="{{item}}" wx:key="key" class='address-item home'
+		  bindtouchstart="handleTouchStart" 
+          bindtouchend="handleTouchEnd"
+          bindtap="handleClick">
 		    <image class='icon-home' src='/static/images/icon-address-home.png'></image>
 		    <view class='middle-wrapper'>
 		        <view style="font-size: 32rpx;">{{item.addressname}}</view>

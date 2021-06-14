@@ -184,6 +184,19 @@ Page({
 			tabChangePaddressValue:d.tabChangePaddressValue,//地址
 	    }
 		console.log(data);
+		if(data.tabChangeNameValue == '' || 
+		data.tabChangeNumberValue == '' || 
+		data.tabChangeContentValue == '' || 
+		data.tabChangePnameValue == '' || 
+		data.tabChangeMarksValue == '' || 
+		data.tabChangePtelValue == '' || 
+		data.tabChangePemailValue == '' || data.tabChangePaddressValue == ''){
+			wx.showToast({
+			    title: '请完善发票信息',
+			    icon: 'none'
+			})
+			return;
+		}
 	    req({
 	        url: '/UserCall/insert_invoice',
 	        method: 'POST',
