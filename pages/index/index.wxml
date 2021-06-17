@@ -469,10 +469,10 @@
 		</view>
 		<view style="font-size: 11px;text-align: center;margin-right: 20px;margin-left: 20px;">
 		    <view style="color: #9e9e9e;margin-top: 30rpx;">温馨提示</view>
-			<view style="color: #9e9e9e;margin-top: 30rpx;">1、您交寄贵重物品的，请事先声明，否则视为价值不超过1000元。</view>
+			<view style="color: #9e9e9e;margin-top: 30rpx;">1、您交寄贵重物品的，请事先声明，否则视为价值不超过3000元。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">2、贵重物品请保价。若未选择保价，则在三倍运费的限额内向您赔偿托寄物品的实际损失。</view>
 			<view style="color: #9e9e9e;margin-top: 30rpx;">3、若您已选择保价切支付保价费用，则本公司按照保价金额和损失的比例向您赔偿，最高不超过托寄物的实际损失金额。</view>
-			<view style="color: #9e9e9e;margin-top: 30rpx;">4、如果保价金额大于50万，请以司机上门确认的保价金额为准。</view>
+			<view style="color: #9e9e9e;margin-top: 30rpx;">4、如果保价金额大于3000元，请以司机上门确认的保价金额为准。</view>
 		</view>
 	</view>
 	
