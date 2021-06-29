@@ -8,10 +8,10 @@
 	<view class='detail-wrapper'>
 	       <view class="section">
 	         <block wx:for="{{one_2}}" wx:key="index">
-	         <image style="height: 60rpx;width: 60rpx;display: inline-block" catchtap='in_xin' id='{{index+1}}' data-in='use_sc2' src='/static/images/icon-choose-pay-methods.png'></image>
+	         <image style="height: 60rpx;width: 60rpx;display: inline-block" catchtap='in_xin' id='{{index+1}}' data-in='use_sc2' src='/static/images/xi1.png'></image>
 	         </block>
 	         <block wx:for="{{two_2}}" wx:key="index">
-	         <image style="height: 60rpx;width: 60rpx;display: inline-block" catchtap='in_xin' id='{{index+1}}' data-in='use_sc' src='/static/images/icon-choose-pay-methodsnew.png'></image>
+	         <image style="height: 60rpx;width: 60rpx;display: inline-block" catchtap='in_xin' id='{{index+1}}' data-in='use_sc' src='/static/images/xi2.png'></image>
 	         </block>
 	       </view>
 	</view>
